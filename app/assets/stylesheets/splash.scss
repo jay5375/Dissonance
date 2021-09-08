@@ -1,0 +1,294 @@
+// .nav-bar {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    padding: 0px;
+    margin:0px;
+    background-color: #404EED;
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.nav-wrapper img {
+    width: 125px;
+    height: 35px;
+    padding-top: 20px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.links {
+    display: flex;
+}
+
+.link {
+    padding-right: 25px;
+    padding-top: 15px;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.body-section-one {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // background-image: image-url('clouds.svg');
+    background-color: #404EED;
+}
+
+.body-section-one .background {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+
+.body-section-one .background img {
+    padding-top: 1%;
+}
+
+.body-section-one .image-one {
+    grid-column: 1/7;
+    grid-row: 1/2;
+}
+
+.body-section-one .image-one img {
+    padding-left: 22%;
+    padding-top: 23.5%;
+}
+
+.body-section-one .image-two {
+    grid-column: 7/-1;
+    grid-row: 1/2;
+}
+
+.body-section-one .image-two img {
+    padding-top: 23%;
+    padding-left: 20%;
+}
+
+
+
+.body-section-one .text {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    
+}
+
+.body-section-one h1 {
+    margin-bottom: 40px;
+}
+
+.body-section-one p {
+    margin-bottom: 30px;
+    max-width: 70%;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.body-section-two {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    padding: 5%;
+}
+
+// .body-section-two img {
+//     width: 100%;
+// }
+
+.body-section-two .image-container {
+    grid-column: 1/7;
+}
+
+.body-section-two .bs2_text {
+    grid-column: 9/-1;
+    padding-top: 4%;
+    max-width: 160px;
+}
+
+.body-section-three {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    padding: 4.5%;
+    // background-color: #D3D0D4;
+}
+
+.body-section-three .bs3_text {
+    grid-column: 2/6;
+    max-width: 300px;
+}
+
+.body-section-three .image-container3 {
+    grid-column: 6/-1;
+}
+
+.body-section-four {
+    text-align: center;
+    padding: 3%;
+}
+
+.body-section-five {
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.container {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.body-section-five .image-container4{
+    grid-column: 4/10;
+}
+
+.body-section-five button {
+    padding: 10px;
+    background-color: #404EED;
+    color: white;
+    border-radius: 50px;
+}
+
+.color {
+    background-color: #F1F0F1;
+}
+
+.color2 {
+    background-color: black;
+}
+
+.footer .color3 {
+    color:#404EED;
+}
+
+.footer {
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    padding-top: 3%;
+}
+
+.footer p {
+    color: white;
+}
+
+
+
+
+.login-button {
+    padding: 10px 5px;
+    border-radius: 50px;
+    border: none;
+}
+
+.login {
+    color: black;
+    padding: 10px 10px;
+}
+
+.bs1b {
+    display: flex;
+    justify-content: center;
+}
+
+.bs1b .b1 {
+    border-radius: 50px;
+    padding: 15px;
+    margin-right: 25px;
+    background-color: white;
+}
+
+.bs1b .b2 {
+    border-radius: 50px;
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
+.footer1 {
+    grid-column: 1/3;
+}
+
+.footer2 {
+    grid-column: 5/6;
+}
+
+.footer3 {
+    grid-column: 7/8;
+}
+
+.footer4 {
+    grid-column: 9/10;
+}
+
+.footer5 {
+    grid-column: 11/12;
+}
+
+.login-form {
+    background-image: image-url("login_wallpaper.png");
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-size: 100%;
+}
+
+.login-form2 {
+    left: 50%;
+    top: 50%;
+    position: relative;
+    transform: translate(-10%, -50%);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
