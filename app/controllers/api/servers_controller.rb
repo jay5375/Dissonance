@@ -1,8 +1,8 @@
-class ServersController < ApplicationController
+class Api::ServersController < ApplicationController
 
     def index 
         @servers = Server.all 
-        render 'api/servers/index'
+        render :index
     end
 
     def show 
@@ -13,9 +13,9 @@ class ServersController < ApplicationController
         @server = Server.new(server_params)
         @server.author_id = current_user.id
         if @server.save 
-            render 'api/servers/show'
+            render :show
         else
-            render 
+            render json: ["Error"], status: 422
         end
     end
 
@@ -23,7 +23,7 @@ class ServersController < ApplicationController
         @server = Server.find_by(id: params[:id])
         if @server.update(server_params)
         else
-            render 
+            render json: ["Error"], status: 422
         end 
     end
 
