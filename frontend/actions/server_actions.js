@@ -1,0 +1,46 @@
+import * as ServerUtil from '../util/server_util'
+
+export const RECEIVE_SERVERS = 'RECEIVE_SERVERS'
+export const RECEIVE_SERVER = 'RECEIVE_SERVER'
+export const REMOVE_SERVER = 'REMOVE_SERVER'
+
+const receiveServers = servers => ({
+    type: RECEIVE_SERVERS,
+    servers
+})
+
+const receiveServer = server => ({
+    type: RECEIVE_SERVER,
+    server 
+})
+
+const removeServer = serverId => ({
+    type: REMOVE_SERVER,
+    serverId
+})
+
+export const fetchServers = () => dispatch => {
+    return ServerUtil.fetchServers()
+        .then(servers => dispatch(receiveServers(servers)))
+}
+
+export const fetchServer = server => dispatch => {
+    return ServerUtil.fetchServer(server)
+        .then(server => dispatch(receiveServer(server)))
+}
+
+export const fetchUserServers = userId => dispatch => {
+    return ServerUtil.fetchServers(userId)
+        .then(servers => dispatch(receiveServer(servers)))
+}
+
+export const createServer = server => dispatch => {
+    return ServerUtil.createServer(server)
+        .then(server => dispatch(receiveServer(server)))
+}
+
+export const deleteServer = server => {
+    return ServerUtil.deleteServer(server)
+        .then(() => dispatch(removeServer(server)))
+}
+
