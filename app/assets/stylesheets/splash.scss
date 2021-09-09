@@ -261,7 +261,7 @@ nav a {
     grid-column: 11/12;
 }
 
-.login-form {
+.auth_background {
     background-image: image-url("login_wallpaper.png");
     position: fixed;
     top: 0;
@@ -270,16 +270,119 @@ nav a {
     right: 0;
     overflow: auto;
     background-size: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-form2 {
-    left: 50%;
-    top: 50%;
-    position: relative;
-    transform: translate(-10%, -50%);
-    display: flex;
-    flex-direction: column;
+    width: 750px;
+    background-color: #313339;
+    border-radius: 5px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
+
+.login-form2 input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 40px;
+    background-color: #313339;
+    margin-bottom: 15px;
+    margin-top: 12px;
+    border: 1px solid #1b1b1b;
+    color: white;
+}
+
+.login-form2 input:hover {
+    border: solid 1px black;
+}
+
+.login-form2 input:focus {
+    border: solid 1px #099cd7;
+    outline: none;
+}
+
+.auth_background p {
+    color: #a0a2a6;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    width: 80%;
+
+}
+
+.auth_background h1 {
+    font-size: 24px;
+    color:white;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 14px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.auth_background button {
+    height: 44px;
+    width: 80%;
+    color: white;
+    background-color: #5865f2;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.auth_background a {
+    // display: block;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    color: #2d9ad4 ;
+}
+
+.signup-form {
+    width: 480px;
+    background-color: #313339;
+    border-radius: 5px;
+    height: 560px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.signup-form input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 40px;
+    background-color: #313339;
+    margin-bottom: 15px;
+    margin-top: 12px;
+    border: 1px solid #1b1b1b;
+    color: white;
+}
+
+.signup-form h1 {
+    text-align: center;
+}
+
+.signup-form p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-form a {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 
 
 

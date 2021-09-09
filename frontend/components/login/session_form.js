@@ -39,65 +39,59 @@ class SessionForm extends React.Component {
   render() {
     if (this.props.formType === 'login') {
         return (
-            <div className="login-form">
+            <div className="auth_background">
               <div className="login-form2">
                 <form onSubmit={this.handleSubmit}>
-                    <label>EMAIL OR PHONE NUMBER 
-                        <input 
-                        type='text'
-                        value={this.state.email}
-                        onChange={this.update('email')}
-                        />
-                    </label>
-                    <label>PASSWORD
-                        <input 
-                        type='password'
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                        />
-                    </label>
+                    <h1>Welcome back!</h1>
+                    <p>We're so excited to see you again!</p>
+                    <p>EMAIL OR PHONE NUMBER</p>
+                    <input 
+                    type='text'
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    />
+                    <p>PASSWORD</p>
+                    <input 
+                    type='password'
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    />
                     <button>Login</button>
+                    <button onClick={() => this.props.processForm({email: 'testing', password: 'password'})}>Demo User</button>
                 </form>
-                <p>Need an account?</p>
-                <Link to='/signup'>Register</Link>
+                  <p>Need an account? <Link to='/signup'>Register</Link></p>
               </div>
             </div>
         )
     } else {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>EMAIL
+              <form onSubmit={this.handleSubmit}>
+                    <div className="auth_background">
+                      <div className="signup-form">
+                        <h1>Create an account</h1>
+                        <p>EMAIL</p>
                         <input 
                         type='text'
                         value={this.state.email}
-                        onChange={this.update('email')}
-                        />
-                    </label>
-                    <label>USERNAME
+                        onChange={this.update('email')}/>
+                        <p>USERNAME</p>
                         <input 
                         type='text'
                         value={this.state.username}
                         onChange={this.update('username')}
                         />
-                    </label>
-                    <label>PASSWORD
+                        <p>PASSWORD</p>
                         <input 
                         type='password'
                         value={this.state.password}
                         onChange={this.update('password')}
                         />
-                    </label>
-                    {/* <label>DATE OF BIRTH
-                        <input 
-                        type='date'
-                        value={this.state.dob}
-                        />
-                    </label> */}
-                    <button>Continue</button>
-                </form>
-
-                <Link to='/login'>Already have an account?</Link>
+                        <button>Continue</button>
+                        <Link to="/login" className="link">Already have an account?</Link>
+                      </div>
+                    </div>
+              </form>
             </div>
         )
     }
