@@ -6,8 +6,13 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: ["Error"], status: 422
         end
+    end
+
+    def show 
+        @user = User.find_by(id: params[:id])
+        render 'api/users/servers'
     end
 
     private 
