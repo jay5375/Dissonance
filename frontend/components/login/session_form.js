@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   update(field) {
@@ -22,6 +23,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  handleDemoUser(e){
+    e.preventDefault();
+    this.props.processForm({email: 'testing', password: 'password'})
   }
 
   renderErrors() {
@@ -44,7 +50,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Welcome back!</h1>
                     <p>We're so excited to see you again!</p>
-                    <p>EMAIL OR PHONE NUMBER</p>
+                    <p>EMAIL OR PHONE NUMBER {this.props.errors[0]}</p>
                     <input 
                     type='text'
                     value={this.state.email}
@@ -57,7 +63,7 @@ class SessionForm extends React.Component {
                     onChange={this.update('password')}
                     />
                     <button>Login</button>
-                    <button onClick={() => this.props.processForm({email: 'testing', password: 'password'})}>Demo User</button>
+                    <button onClick={this.handleDemoUser}>Demo User</button>
                 </form>
                   <p>Need an account? <Link to='/signup'>Register</Link></p>
               </div>

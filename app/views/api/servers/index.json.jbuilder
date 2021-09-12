@@ -1,3 +1,5 @@
-json.array! @servers do |server| 
-    json.name server.name
+@servers.each do |server| 
+    json.set! server.id do 
+        json.extract! server, :id, :name 
+    end
 end

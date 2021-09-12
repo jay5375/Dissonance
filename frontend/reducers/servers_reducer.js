@@ -5,12 +5,12 @@ const serversReducer = (state = {}, action) => {
     let next = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_SERVERS:
-            return action.servers
+            return action.servers 
         case RECEIVE_SERVER:
-            next[action.server.id] = action.server
-            return next
+            next[action.server.id] = action.server 
+            return next 
         case REMOVE_SERVER:
-            delete next[action.server.id]
+            delete next[action.serverId]
             return next
         default:
             return state

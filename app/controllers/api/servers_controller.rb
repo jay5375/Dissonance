@@ -1,13 +1,12 @@
-class ServersController < ApplicationController
+class Api::ServersController < ApplicationController
 
     def index 
         @servers = Server.all 
-        render 'api/servers/index'
+        render 'api/servers/index.json.jbuilder'
     end
 
     def show 
         @server = Server.find_by(id: params[:id])
-        render 'api/servers/show.json.jbuilder'
     end
 
     def create 
