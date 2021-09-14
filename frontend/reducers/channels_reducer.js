@@ -1,4 +1,4 @@
-import { RECEIEVE_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
+import { RECEIVE_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
 
 const channelsReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -16,3 +16,5 @@ const channelsReducer = (state = {}, action) => {
             return state 
     }
 }
+
+export default channelsReducer

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Server from "./server";
 import ServerItem from "./server_item";
+import ServerColumn from "./server_column";
+import Channel from "../channel/channel";
 
 class UserServers extends React.Component {
     constructor(props){
@@ -16,6 +18,7 @@ class UserServers extends React.Component {
 
     componentDidMount(){
         this.props.fetchUserServers(this.props.currentUser.id)
+        this.props.fetchChannels()
     }
 
     handleSubmit(e){
@@ -39,10 +42,10 @@ class UserServers extends React.Component {
     }
 
     render() {
-        // if (!this.props.server) return null 
+        if (!this.props.servers) return null 
         return (
-            <div className="server_sidebar">
-                <ul className="server_list">
+            <div className="server_layout">
+                <ul>
                     <button className="home"></button>
                     <div className="line"></div>
                     <li>
@@ -58,6 +61,18 @@ class UserServers extends React.Component {
                         <button onClick={this.handleModal(true)} className="server_button">+</button>
                     </li>
                 </ul>
+                
+                <ServerColumn
+                    currentUser={this.props.currentUser}
+                    server={this.props.server}
+                    deleteServer={this.props.deleteServer}
+                    updateServer={this.props.updateServer}
+                    createChannel={this.props.createChannel}
+                    updateChannel={this.props.updateChannel}
+                    deleteChannel={this.props.deleteChannel}
+                    history = {this.props.history}
+                />
+         
                 
                 <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>
                     <form onSubmit={this.handleSubmit}>

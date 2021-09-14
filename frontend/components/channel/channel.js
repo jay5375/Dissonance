@@ -1,0 +1,84 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown, faHashtag, faCog } from  '@fortawesome/free-solid-svg-icons'
+
+class Channel extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "",
+            modal: false, 
+            edit: false,
+            modalValue: {}
+        }
+        this.handleEdit = this.handleEdit.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
+    }
+
+    handleChange(field){
+        return e => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    handleEdit(bool, channel){
+        return e => {
+            e.preventDefault()
+            this.setState({ edit: bool, modalValue: channel })
+        }
+    }
+
+    handleUpdate(e){
+        e.preventDefault()
+        this.props.updateChannel({ name: this.state.name, id: this.state.modalValue.id })
+        this.props.updateServer(this.props.server)
+        this.setState({ edit: false, name: "", modalValue: {} })
+    }
+
+    handleDelete(e){
+        e.preventDefault()
+        this.props.deleteChannel({ id: this.state.modalValue.id })
+        this.props.updateServer(this.props.server)
+        this.setState({ edit: false, name: "", modalValue: {} })
+    }
+
+    render() {
+        if (!this.props.server) return null 
+        return (
+            <div className="channels">
+                <ul>
+                    {this.props.server.channels.map(channel => {
+                        return (<li key={channel.id} className="single-channel">
+                                    <i><FontAwesomeIcon icon={faHashtag} /></i>
+                                    <Link to={`/servers/${this.props.server.id}/${channel.id}`}>
+                                        <p>{channel.name}</p>
+                                    </Link>
+                                    <i className="cog" onClick={ this.handleEdit(true, channel) }><FontAwesomeIcon icon={faCog}/></i>
+                                </li>)
+                    })}
+                </ul>
+                <div className={`modal-container ${ this.state.edit ? 'display_modal' : 'hide_modal'}`}>
+                    <div className={`createChannel`}>
+                        <form>
+                            <p onClick={this.handleEdit(false, {})} className="x">&times;</p>
+                            <h1>Edit Text Channel</h1>
+                            <p>Channel Name</p>
+                            <input 
+                                type='text'
+                                value={this.state.name}
+                                onChange={this.handleChange("name")}
+                                placeholder={this.state.modalValue.name}
+                            />
+                            <button onClick={this.handleUpdate}>Edit Channel</button>
+                            <button onClick={this.handleDelete}>Delete Channel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default Channel

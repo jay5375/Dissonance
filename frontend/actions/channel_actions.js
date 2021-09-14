@@ -1,7 +1,7 @@
 import * as ChannelUtils from "../util/channel_util"
 
 export const RECEIVE_CHANNEL = "RECEIVE_CHANNEL"
-export const RECEIEVE_CHANNELS = "RECEIVE_CHANNELS"
+export const RECEIVE_CHANNELS = "RECEIVE_CHANNELS"
 export const REMOVE_CHANNEL = "REMOVE_CHANNEL"
 
 const receiveChannel = channel => {

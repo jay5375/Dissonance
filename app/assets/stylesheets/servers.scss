@@ -1,12 +1,12 @@
-.server_sidebar {
+.server_layout {
     display: grid;
-    grid-template-columns: 80px 3fr 15fr ;
+    grid-template-columns: 80px 2fr 15fr ;
     height: 100vh;
     position: relative;
     background-color: #37393f;
 }   
 
-.server_sidebar ul {
+.server_layout ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,7 @@
     grid-row: 1/2;
 }
 
-.server_sidebar li {
+.server_layout li {
     padding-bottom: 5px;
     margin: 0px;
 }
@@ -34,6 +34,9 @@
     height: 55px;
     width: 55px;
     border-radius: 50px;
+    background-color: #2f3137;
+    color: white;
+    border: none;
 }
 
 .home {
@@ -81,4 +84,136 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
+}
+
+.dropdown {
+    grid-column: 2/3;
+    display: grid;
+}
+
+i {
+    display: inline-block;
+}
+
+.server_menu {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    height: 50px;
+    align-items: center;
+    grid-row: 1/2;
+    position: relative;
+}
+
+.server-dropdown{
+    position: fixed;
+    z-index: 1;
+    height: 400px;
+}
+
+.server_menu p{
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    
+}
+
+.server_menu i {
+    font-size: 18px;
+    color: white;
+    padding-right: 20px;
+}
+
+.channel_container {
+    height: 100vh;
+    background-color: #2f3137;
+    display: grid;
+    grid-template-rows: 50px 50px;
+}
+
+.options p {
+    margin-left: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.channels ul{
+    background-color: #2f3137;
+    display: block;
+}
+
+.single-channel i{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 20px;
+}
+
+.channels {
+    display: flex;
+    flex-direction: column;
+}
+
+.single-channel{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #868a8e;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0px;
+    font-size: 16px;
+    height: 20px;
+}
+
+.single-channel p{
+    color: #868a8e;
+}
+
+.channels ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.createChannel {
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.createChannel input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.createChannel button{
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    align-items: center;
 }

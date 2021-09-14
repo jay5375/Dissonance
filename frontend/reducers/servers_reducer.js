@@ -10,7 +10,7 @@ const serversReducer = (state = {}, action) => {
             next[action.server.id] = action.server 
             return next 
         case REMOVE_SERVER:
-            delete next[action.serverId]
+            delete next[action.server.id]
             return next
         default:
             return state

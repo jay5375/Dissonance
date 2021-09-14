@@ -18,7 +18,7 @@ export const fetchUserServers = userId => (
 
 export const updateServer = server => (
     $.ajax({
-        url: `/api/users/${server.id}`,
+        url: `/api/servers/${server.id}`,
         method: 'PATCH',
         data: { server }
     })
