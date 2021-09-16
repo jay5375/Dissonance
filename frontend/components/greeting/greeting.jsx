@@ -77,45 +77,6 @@ class Greeting extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="color2">
-                  <div className="footer">
-                      <div className="footer1">
-                        <h2>IMAGINE A PLACE</h2>
-                      </div>
-                      <div className="footer2">
-                        <p className="color3">Product</p>
-                        <p>Download</p>
-                        <p>Nitro</p>
-                        <p>Status</p>
-                      </div>
-                      <div className="footer3">
-                        <p className="color3">Company</p>
-                        <p>About</p>
-                        <p>Jobs</p>
-                        <p>Branding</p>
-                        <p>Newsroom</p>
-                      </div>
-                      <div className="footer4">
-                        <p className="color3">Resources</p>
-                        <p>College</p>
-                        <p>Support</p>
-                        <p>Safety</p>
-                        <p>Blog</p>
-                        <p>Feedback</p>
-                        <p>Developers</p>
-                        <p>StreamKit</p>
-                      </div>
-                      <div className="footer5">
-                        <p className="color3">Policies</p>
-                        <p>Terms</p>
-                        <p>Privacy</p>
-                        <p>Guidelines</p>
-                        <p>Acknowledgements</p>
-                        <p>Licenses</p>
-                        <p>Moderation</p>
-                      </div>
-                    </div>
-                  </div>
             </div>
         )
       }

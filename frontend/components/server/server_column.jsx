@@ -87,7 +87,6 @@ class ServerColumn extends React.Component {
                 <div className={`modal-container ${ this.state.createChannel ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`createChannel`}>
                         <form onSubmit={this.handleChannelSubmit}>
-                            {/* <p onClick={this.handleCreateChannel(false)} className="x">&times;</p> */}
                             <h1>Create Text Channel</h1>
                             <p>Channel Name</p>
                             <input 
@@ -104,21 +103,26 @@ class ServerColumn extends React.Component {
                 </div>
                 <div className={`modal-container ${this.state.serverDrop ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`editDeleteChannel`}>
-                        <h1>Edit </h1>
+                        <div className="server-menu-close">
+                            <p onClick={this.handleServerMenu(false)}>&times;</p>
+                        </div>
+                        <h1>Edit Server</h1>
                         <input 
                             type='text'
                             value={this.state.name}
                             onChange={this.handleChange("name")}
                             placeholder={this.props.server.name}
                         />
-                        <button 
-                            className={ `${this.props.server.author_id === this.props.currentUser.id ? 'display_modal' : 'hide_modal'}` }
-                            onClick={this.handleDeleteServer}
-                        >Delete Server</button>
-                        <button
-                            className={`${this.props.server.author_id === this.props.currentUser.id ? 'display_modal' : 'hide_modal'}`}
-                            onClick={this.handleEditServer}
-                        >Edit Server</button>
+                        <div className="EditServerButtons">
+                            <button 
+                                className={ `${this.props.server.author_id === this.props.currentUser.id ? 'display_modal' : 'hide_modal'} red` }
+                                onClick={this.handleDeleteServer}
+                            >Delete Server</button>
+                            <button
+                                className={`${this.props.server.author_id === this.props.currentUser.id ? 'display_modal' : 'hide_modal'} purple`}
+                                onClick={this.handleEditServer}
+                            >Edit Server</button>
+                        </div>
                     </div>
                 </div>
                 

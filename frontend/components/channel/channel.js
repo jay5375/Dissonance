@@ -62,7 +62,9 @@ class Channel extends React.Component{
                 <div className={`modal-container ${ this.state.edit ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`createChannel`}>
                         <form>
-                            <FontAwesomeIcon icon={faTimesCircle} onClick={this.handleEdit(false, {})} />
+                            <div className="circle-x">
+                                <FontAwesomeIcon icon={faTimesCircle} onClick={this.handleEdit(false, {})} />
+                            </div>
                             <h1>Edit Text Channel</h1>
                             <p>Channel Name</p>
                             <input 
@@ -71,8 +73,10 @@ class Channel extends React.Component{
                                 onChange={this.handleChange("name")}
                                 placeholder={this.state.modalValue.name}
                             />
-                            <button onClick={this.handleUpdate}>Edit Channel</button>
-                            <button onClick={this.handleDelete}>Delete Channel</button>
+                            <div className="createChannelButtons">
+                                <button onClick={this.handleDelete} className="red">Delete Channel</button>
+                                <button onClick={this.handleUpdate} className="purple">Edit Channel</button>
+                            </div>
                         </form>
                     </div>
                 </div>

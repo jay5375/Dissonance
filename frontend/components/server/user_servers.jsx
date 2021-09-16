@@ -49,7 +49,9 @@ class UserServers extends React.Component {
         return (
             <div className="server_layout">
                 <ul>
-                    <button className="home"></button>
+                    <Link to={"/channels/@me"}>
+                        <button className="home"></button>
+                    </Link>
                     <div className="line"></div>
                     {this.props.servers.map(server => {
                     return <ServerItem 
@@ -90,7 +92,6 @@ class UserServers extends React.Component {
                 
                 <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>
                     <form>
-                        <p onClick={this.handleModal(false)} className="x">&times;</p>
                         <h1>Create a server</h1>
                         <p>Server Name</p>
                         <input 
@@ -98,7 +99,11 @@ class UserServers extends React.Component {
                             value={this.state.name}
                             onChange={this.handleChange('name')}
                         />
-                        <button onClick={this.handleSubmit}>Create</button>
+                        <div className="createServerButtons">
+                            <button onClick={this.handleModal(false)} className="cancel">Cancel</button>
+                            <button onClick={this.handleSubmit} className="purple">Create</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

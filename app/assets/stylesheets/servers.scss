@@ -33,12 +33,12 @@
 
 .home:focus {
     border-radius: 20px;
-    background-color: #404EED;
+    background-color: #5765f2;
 }
 
 .home:hover {
     border-radius: 20px;
-    background-color: #404EED;
+    background-color: #5765f2;
 }
 
 .home {
@@ -61,6 +61,27 @@
     margin-bottom: 8px;
 }
 
+.purple{
+    background-color: #5765f2;
+    color: white;
+    border: 1px solid black;
+}
+
+.editDeleteChannel .server-menu-close {
+    display: flex;
+    justify-content: flex-end;
+    height: 5%;
+    margin-right: 5%;
+}
+
+.red {
+    color: #ed4245;
+    background-color: inherit;
+    border: none;
+}
+
+
+
 .modal {
     grid-column: 1/-1;
     position: absolute;
@@ -71,10 +92,34 @@
     transform: translate(-50%, -50%);
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: #37393f;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    height: 400px;
+    height: 200px;
     width: 300px;
+    border: 1px solid black;
+    color: white;
+}
+
+.modal .createServerButtons {
+    display: flex;
+    justify-content: flex-end;
+    color: #dadbdc;
+    align-items: center;
+    width: inherit;
+    height: 57px;
+    background-color: #202225;
+}
+
+.modal .createServerButtons button {
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.modal .createServerButtons .cancel {
+    background-color: inherit;
+    color: white;
+    border: none;
 }
 
 .title {
@@ -85,7 +130,10 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    background-color: #202225;
+    border: none;
+    color: white;
 }
 
 .dropdown {
@@ -202,7 +250,7 @@ i {
     color: white;
     border: 1px solid black;
     display: flex;
-    justify-content: center;
+   
 }
 
 .createChannel input{
@@ -210,8 +258,8 @@ i {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
-    border-radius: 5px;
-    background-color: #37393f;
+    border-radius: 3px;
+    background-color: #202225;
     border: 1px solid black;
     border-bottom: 1px solid black;
     color: white;
@@ -220,12 +268,15 @@ i {
 
 .createChannel i {
     color: #dcddde;
-    
+}
+
+.createChannel form {
+    width: inherit;
 }
 
 .createChannel button{
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .editDeleteChannel {
@@ -244,8 +295,36 @@ i {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     border: 1px solid black;
-    height: 300px;
+    height: 200px;
 }
+
+.editDeleteChannel input {
+    background-color: #202225;
+    border: none;
+    text-indent: 5px;
+    margin-top: 5%;
+}
+
+.EditServerButtons {
+    display: flex;
+    justify-content: space-between;
+    color: #dadbdc;
+    background-color: #202225;
+    align-items: center;
+    width: inherit;
+    bottom: 0;
+    position: absolute;
+    height: 20%;
+}
+
+.EditServerButtons button {
+    margin: 10px;
+    border: none;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    border-radius: 3px;
+}
+
+
 
 .modal-container {
     position: fixed;
@@ -259,12 +338,12 @@ i {
 
 .server-item:focus {
     border-radius: 20px;
-    background-color: #404EED;
+    background-color: #5765f2;
 }
 
 .server-item:hover {
     border-radius: 20px;
-    background-color: #404EED;
+    background-color: #5765f2;
 }
 
 .server-item {
@@ -311,14 +390,15 @@ i {
 .createChannelButtons {
     display: flex;
     justify-content: flex-end;
-    padding-right: 10px;
     color: #dadbdc;
     background-color: #202225;
     align-items: center;
+    width: inherit;
 }
 
 .createChannelButtons button {
     margin-top: 20px;
+    margin-right: 5%;
 }
 
 .createChannelButtons .cancel {
@@ -330,7 +410,7 @@ i {
 .createChannelButtons .modalCreateButton {
     background-color: #5765f2;
     color: #dadbdc;
-    border-radius: 5px;
+    border-radius: 3px;
     border: none;
 }
 
