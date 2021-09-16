@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faHashtag, faCog } from  '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faHashtag, faCog, faTimesCircle } from  '@fortawesome/free-solid-svg-icons'
 
 class Channel extends React.Component{
     constructor(props){
@@ -51,7 +51,7 @@ class Channel extends React.Component{
                 <ul>
                     {this.props.server.channels.map(channel => {
                         return (<li key={channel.id} className="single-channel">
-                                    <i><FontAwesomeIcon icon={faHashtag} /></i>
+                                    <i><FontAwesomeIcon icon={faHashtag} className="hash" /></i>
                                     <Link to={`/servers/${this.props.server.id}/${channel.id}`}>
                                         <p>{channel.name}</p>
                                     </Link>
@@ -62,7 +62,7 @@ class Channel extends React.Component{
                 <div className={`modal-container ${ this.state.edit ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`createChannel`}>
                         <form>
-                            <p onClick={this.handleEdit(false, {})} className="x">&times;</p>
+                            <FontAwesomeIcon icon={faTimesCircle} onClick={this.handleEdit(false, {})} />
                             <h1>Edit Text Channel</h1>
                             <p>Channel Name</p>
                             <input 

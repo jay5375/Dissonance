@@ -30,13 +30,15 @@
     display: none;
 }
 
-.server_button {
-    height: 55px;
-    width: 55px;
-    border-radius: 50px;
-    background-color: #2f3137;
-    color: white;
-    border: none;
+
+.home:focus {
+    border-radius: 20px;
+    background-color: #404EED;
+}
+
+.home:hover {
+    border-radius: 20px;
+    background-color: #404EED;
 }
 
 .home {
@@ -45,6 +47,12 @@
     border-radius: 50px;
     background-image: image-url("button_logo.svg");
     margin-bottom: 8px;
+    transition: 0.1s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #2f3137;
+    background-position: center;
+    border: none;
 }
 
 .line {
@@ -67,12 +75,6 @@
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     height: 400px;
     width: 300px;
-}
-
-.x {
-    text-align: right;
-    margin-right: 12px;
-    margin-bottom: 5px;
 }
 
 .title {
@@ -123,7 +125,7 @@ i {
 .server_menu i {
     font-size: 18px;
     color: white;
-    padding-right: 20px;
+    padding-right: 6%;
 }
 
 .channel_container {
@@ -160,13 +162,17 @@ i {
 
 .single-channel{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     color: #868a8e;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 0px;
     font-size: 16px;
     height: 20px;
+}
+
+.single-channel .cog {
+    margin-left: auto;
+    padding-right: 5%;
 }
 
 .single-channel p{
@@ -180,7 +186,7 @@ i {
 
 
 .createChannel {
-    background-color: white;
+    background-color: #37393f;
     width: 400px;
     height: auto;
     margin-left: auto;
@@ -193,19 +199,52 @@ i {
     text-align: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
 .createChannel input{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border-radius: 5px;
+    background-color: #37393f;
+    border: 1px solid black;
+    border-bottom: 1px solid black;
+    color: white;
+    text-indent: 5px;
+}
+
+.createChannel i {
+    color: #dcddde;
+    
 }
 
 .createChannel button{
     margin-bottom: 20px;
     border-radius: 5px;
+}
+
+.editDeleteChannel {
+    background-color: #37393f;
+    width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 1px solid black;
+    height: 300px;
 }
 
 .modal-container {
@@ -217,3 +256,100 @@ i {
     z-index: 2;
     align-items: center;
 }
+
+.server-item:focus {
+    border-radius: 20px;
+    background-color: #404EED;
+}
+
+.server-item:hover {
+    border-radius: 20px;
+    background-color: #404EED;
+}
+
+.server-item {
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+    transition: 0.1s;
+    background-color: #2f3137;
+    border: none;
+    color: white;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.add-server {
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+    transition: 0.1s;
+    background-color: #2f3137;
+    border: none;
+    color: #3b9e5b;
+    font-size: 30px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.add-server:focus {
+    border-radius: 20px;
+    background-color: #3b9e5b;
+    color: white;
+}
+
+.add-server:hover {
+    border-radius: 20px;
+    background-color: #3b9e5b;
+    color: white;
+}
+
+.hash {
+    padding-right: 5px;
+}
+
+.createChannelButtons {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: #dadbdc;
+    background-color: #202225;
+    align-items: center;
+}
+
+.createChannelButtons button {
+    margin-top: 20px;
+}
+
+.createChannelButtons .cancel {
+    border: none;
+    color: #dadbdc;
+    background-color: inherit;
+}
+
+.createChannelButtons .modalCreateButton {
+    background-color: #5765f2;
+    color: #dadbdc;
+    border-radius: 5px;
+    border: none;
+}
+
+.cancel {
+    margin-right: 10px;
+}
+
+.explore {
+    grid-column: 3/4;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    color: white;
+}
+
+.explore-button {
+    display: block;
+    margin-left: auto;
+}
+

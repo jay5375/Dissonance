@@ -73,7 +73,7 @@ class ServerColumn extends React.Component {
                         </div>
                         <div className="channel_banner">
                             <i><FontAwesomeIcon icon={faAngleDown}/></i>
-                            <p>Text Channels</p>
+                            <p>TEXT CHANNELS</p>
                             <p className="add" onClick={this.handleCreateChannel(true)}>+</p>
                         </div>
                         <Channel 
@@ -87,7 +87,7 @@ class ServerColumn extends React.Component {
                 <div className={`modal-container ${ this.state.createChannel ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`createChannel`}>
                         <form onSubmit={this.handleChannelSubmit}>
-                            <p onClick={this.handleCreateChannel(false)} className="x">&times;</p>
+                            {/* <p onClick={this.handleCreateChannel(false)} className="x">&times;</p> */}
                             <h1>Create Text Channel</h1>
                             <p>Channel Name</p>
                             <input 
@@ -95,12 +95,16 @@ class ServerColumn extends React.Component {
                                 value={this.state.name}
                                 onChange={this.handleChange("name")}
                             />
-                            <button>Create Channel</button>
+                            <div className="createChannelButtons">
+                                <button className="cancel" onClick={this.handleCreateChannel(false)}>Cancel</button>
+                                <button className="modalCreateButton">Create Channel</button>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div className={`modal-container ${this.state.serverDrop ? 'display_modal' : 'hide_modal'}`}>
-                    <div className={`createChannel`}>
+                    <div className={`editDeleteChannel`}>
+                        <h1>Edit </h1>
                         <input 
                             type='text'
                             value={this.state.name}

@@ -13,7 +13,7 @@ nav {
     background-color: #404EED;
     color: white;
     font-weight: 600;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 .nav-wrapper img {
@@ -53,6 +53,7 @@ nav a {
     grid-template-columns: repeat(12, 1fr);
     // background-image: image-url('clouds.svg');
     background-color: #404EED;
+    position: relative;
 }
 
 .body-section-one .background {
@@ -61,49 +62,62 @@ nav a {
 }
 
 .body-section-one .background img {
-    padding-top: 1%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .body-section-one .image-one {
     grid-column: 1/7;
     grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   
 }
 
 .body-section-one .image-one img {
-    padding-left: 22%;
-    padding-top: 23.5%;
+    max-height: 55%;
+    max-width: 55%;
+    margin-left: 20%;
 }
 
 .body-section-one .image-two {
     grid-column: 7/-1;
     grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .body-section-one .image-two img {
-    padding-top: 23%;
-    padding-left: 20%;
+    // position: absolute;
+    // bottom: 0;
+    max-height: 55%;
+    max-width: 55%;
+    margin-left: 27%;
 }
 
 
 
 .body-section-one .text {
-    grid-column: 1/-1;
+    grid-column: 5/9;
     grid-row: 1/2;
     text-align: center;
-    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 100px;
+    padding-top: 10%;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: white;
     
 }
 
 .body-section-one h1 {
-    margin-bottom: 40px;
+    font-size: 50px;
 }
 
+
 .body-section-one p {
-    margin-bottom: 30px;
-    max-width: 70%;
+    max-width: 95%;
     font-size: 20px;
     line-height: 1.8;
     margin-left: auto;
@@ -130,8 +144,16 @@ nav a {
 
 .body-section-two .bs2_text {
     grid-column: 9/-1;
-    padding-top: 4%;
-    max-width: 160px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.bs2_text h1 {
+    font-size: 2.5em;
+}
+
+.bs2_text p {
+    font-size: 1.25em;
+    line-height: 150%;
 }
 
 .body-section-three {
@@ -146,7 +168,13 @@ nav a {
 
 .body-section-three .bs3_text {
     grid-column: 2/6;
-    max-width: 300px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-top: 15%;
+}
+
+.bs3_text p {
+    font-size: 1.25em;
+    line-height: 150%;
 }
 
 .body-section-three .image-container3 {
@@ -156,6 +184,16 @@ nav a {
 .body-section-four {
     text-align: center;
     padding: 3%;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.body-section-four h1 {
+    font-size: 2.5em;
+}
+
+.body-section-four p {
+    font-size: 1.25em;
+    line-height: 150%;
 }
 
 .body-section-five {
@@ -276,8 +314,8 @@ nav a {
 }
 
 .login-form2 {
-    width: 750px;
-    background-color: #313339;
+    width: 650px;
+    background-color: #2f3137;
     border-radius: 5px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
@@ -287,12 +325,13 @@ nav a {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: 40px;
+    height: 35px;
     background-color: #313339;
     margin-bottom: 15px;
     margin-top: 12px;
     border: 1px solid #1b1b1b;
     color: white;
+    text-indent: 5px;
 }
 
 .login-form2 input:hover {
@@ -347,7 +386,7 @@ nav a {
 
 .signup-form {
     width: 480px;
-    background-color: #313339;
+    background-color: #2f3137;
     border-radius: 5px;
     height: 560px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -358,16 +397,18 @@ nav a {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: 40px;
+    height: 35px;
     background-color: #313339;
     margin-bottom: 15px;
     margin-top: 12px;
     border: 1px solid #1b1b1b;
     color: white;
+    text-indent: 5px;
 }
 
 .signup-form h1 {
     text-align: center;
+    margin-top: 50px;
 }
 
 .signup-form p {
@@ -376,11 +417,14 @@ nav a {
     margin-right: auto;
 }
 
-.signup-form .link {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.signup-form button {
+    margin-bottom: 15px;
 }
+
+.signup-form .link {
+    margin-left: 10%;
+}
+
 
 
 

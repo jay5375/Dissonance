@@ -1,0 +1,1 @@
+json.users_servers @servers - @currentUser.joined_servers - @currentUser.created_servers

@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = [
-    ['Demo Channel', 'Demo@email.com', 'password']
+    [name: 'Demo User', email: 'Demo@email.com', password: 'password']
 ]

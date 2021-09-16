@@ -7,13 +7,17 @@ import LoginFormContainer from "./login/login_form_container";
 import SignupFormContainer from "./login/signup_form_container";
 import UserServersContainer from "./server/user_servers_container";
 
+
 const App = () => (
   <div>
-    <Route exact path="/" component={GreetingContainer} /> 
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute path="/servers/:serverId" component={UserServersContainer} />
-    <ProtectedRoute path="/channels/@me" component={UserServersContainer} />
+    <Switch>
+      <ProtectedRoute path="/servers/explore" component={UserServersContainer} />
+      <Route exact path="/" component={GreetingContainer} /> 
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path="/servers/:serverId" component={UserServersContainer} />
+      <ProtectedRoute path="/channels/@me" component={UserServersContainer} />
+    </Switch>
   </div>
 );
 

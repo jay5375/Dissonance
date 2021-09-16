@@ -57,12 +57,12 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Server 
     
-    has_many :join_servers, 
+    has_many :joined_servers, 
         foreign_key: :user_id,
         class_name: :UserServer
 
     has_many :servers,
-        through: :join_servers,
+        through: :joined_servers,
         source: :server
     
 end

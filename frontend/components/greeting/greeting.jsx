@@ -31,12 +31,8 @@ class Greeting extends React.Component {
                   <div className="image-one"><img src={window.image_one}></img></div>
                   <div className="image-two"><img src={window.image_two}></img></div>
                   <div className="text">
-                    <h1>Imagine a place...</h1>
+                    <h1>IMAGINE A PLACE...</h1>
                     <p>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</p>
-                    <div className="bs1b">
-                        <button className="b1">Download for Windows</button>
-                        <button className="b2">Open Discord in your browser</button>
-                    </div>
                   </div>
                 </div>
                 <div className="body-section-two">
@@ -44,14 +40,14 @@ class Greeting extends React.Component {
                     <img src={window.image_three}></img>
                   </div>
                   <div className="bs2_text">
-                    <h2>Create an invite-only place where you belong</h2>
+                    <h1>Create an <br/> invite-only <br/> place where you <br/> belong</h1>
                     <p>Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat.</p>
                   </div>
                 </div>
                 <div className="color">
                   <div className="body-section-three">
                     <div className="bs3_text">
-                      <h2>Where hanging out is easy</h2>
+                      <h1>Where hanging <br/> out is easy</h1>
                       <p>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.</p>
                     </div>
                     <div className="image-container3">
@@ -64,12 +60,12 @@ class Greeting extends React.Component {
                     <img src={window.image_five}></img>
                   </div>
                   <div className="bs2_text">
-                    <h2>From few to a fandom</h2>
+                    <h1>From few to a fandom</h1>
                     <p>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</p>
                   </div>
                 </div>
                 <div className="body-section-four color">
-                  <h2>RELIABLE TECH FOR STAYING CLOSE</h2>
+                  <h1>RELIABLE TECH FOR STAYING CLOSE</h1>
                   <p>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their <br/> games, or gather up and have a drawing session with screen share.</p>
                   <img src={window.image_six}></img>
                   <div className="body-section-five">
@@ -79,7 +75,6 @@ class Greeting extends React.Component {
                         <h2>Ready to start your journey?</h2>
                       </div>
                     </div>
-                      <button>Download for Mac</button>
                   </div>
                 </div>
                 <div className="color2">

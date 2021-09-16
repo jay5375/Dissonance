@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Server from "./server";
 import ServerItem from "./server_item";
 import ServerColumn from "./server_column";
 import Channel from "../channel/channel";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCompass } from  '@fortawesome/free-solid-svg-icons'
+import Explore from "./explore";
 
 class UserServers extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             name: "",
-            modal: false
+            modal: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleModal = this.handleModal.bind(this)
@@ -19,6 +21,7 @@ class UserServers extends React.Component {
     componentDidMount(){
         this.props.fetchUserServers(this.props.currentUser.id)
         this.props.fetchChannels()
+        this.props.unjoinedUserServers(this.props.currentUser)
     }
 
     handleSubmit(e){
@@ -48,17 +51,20 @@ class UserServers extends React.Component {
                 <ul>
                     <button className="home"></button>
                     <div className="line"></div>
-                    <li>
-                        {/* <Link to={`/servers/${this.props.currentUser.id}`}><img src={window.logo} /></Link> */}
-                    </li>
                     {this.props.servers.map(server => {
                     return <ServerItem 
                             key={server.id}
                             server={server}
+                            className="server-item"
                            />
                     })}
                     <li>
-                        <button onClick={this.handleModal(true)} className="server_button">+</button>
+                        <button onClick={this.handleModal(true)} className="add-server">+</button>
+                    </li>
+                    <li>
+                        <Link to={`/servers/explore`}>
+                            <button className="server-item"><FontAwesomeIcon icon={faCompass}/></button>
+                        </Link>
                     </li>
                 </ul>
                 
@@ -72,21 +78,29 @@ class UserServers extends React.Component {
                     deleteChannel={this.props.deleteChannel}
                     history = {this.props.history}
                 />
-         
+                
+                <Explore 
+                    unjoinedServers={this.props.unjoinedServers}
+                    createUserServer={this.props.createUserServer}
+                    path={this.props.path}
+                    currentUser={this.props.currentUser}
+                    history={this.props.history}
+                />
+                
                 
                 <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <p onClick={this.handleModal(false)} className="x">&times;</p>
                         <h1>Create a server</h1>
                         <p>Server Name</p>
                         <input 
+                            type='text'
                             value={this.state.name}
                             onChange={this.handleChange('name')}
                         />
-                        <button>Create</button>
+                        <button onClick={this.handleSubmit}>Create</button>
                     </form>
                 </div>
-                {/* <button onClick={this.props.logout}>Logout</button> */}
             </div>
         )
     }

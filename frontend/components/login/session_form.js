@@ -27,7 +27,8 @@ class SessionForm extends React.Component {
 
   handleDemoUser(e){
     e.preventDefault();
-    this.props.processForm({email: 'Demo@email.com', password: 'password'})
+    const user = {email: "Demo@email.com", password: "password"}
+    this.props.processForm(user)
   }
 
   renderErrors() {
@@ -63,7 +64,7 @@ class SessionForm extends React.Component {
                     onChange={this.update('password')}
                     />
                     <button>Login</button>
-                    <button onClick={this.handleDemoUser}>Demo User</button>
+                    <button onClick={(this.handleDemoUser)}>Demo User</button>
                 </form>
                   <p>Need an account? <Link to='/signup'>Register</Link></p>
               </div>
