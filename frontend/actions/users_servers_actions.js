@@ -40,3 +40,4 @@ export const deleteUserServer = userServer => dispatch => {
     return userServersUtils.deleteUserServer(userServer)
         .then(() => dispatch(leaveServer(userServer.id)))
 }
+

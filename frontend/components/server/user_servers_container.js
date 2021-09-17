@@ -4,16 +4,27 @@ import { fetchChannels, createChannel, updateChannel, deleteChannel } from "../.
 import { createUserServer, deleteUserServer, unjoinedUserServers} from "../../actions/users_servers_actions";
 import UserServers from './user_servers';
 import { logout, updateUser } from "../../actions/session_actions";
+import { fetchChannelMessages } from "../../actions/message_actions";
+import { createDm, fetchChannelDms } from "../../util/direct_message_util";
+import { createDmChannel, fetchDmChannels } from "../../util/dm_channel_util";
+import { createMessage } from "../../actions/message_actions";
 
 
 const mSTP= ( state, ownProps ) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        servers: Object.values(state.entities.servers),
         server: state.entities.servers[ownProps.match.params.serverId],
+        servers: Object.values(state.entities.servers),
         channels: Object.values(state.entities.channels),
+        messages: Object.values(state.entities.messages),
+        directMessages: Object.values(state.entities.directMessages),
+        channelId: parseInt(ownProps.match.params.channelId),
+        // dmChannels: Object.values(state.entites.dmChannels),
         unjoinedServers: state.entities.unjoinedServers,
-        path: ownProps.match.url
+        // dmChannel: state.entites.dmChannels[ownProps.match.params.dmChannelId],
+        dmChannelId: ownProps.match.params.dmChannelId,
+        path: ownProps.match.url,
+        params: ownProps.match.params
     }
 }
 
@@ -31,7 +42,12 @@ const mDTP = dispatch => {
         createUserServer: userServer => dispatch(createUserServer(userServer)),
         deleteUserServer: userServer => dispatch(deleteUserServer(userServer)),
         unjoinedUserServers: currentUser => dispatch(unjoinedUserServers(currentUser)),
-        updateUser: user => dispatch(updateUser(user))
+        createMessage: message => dispatch(createMessage(message)),
+        fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
+        // fetchChannelDms: dmChannelId => dispatch(dispatch(fetchChannelDms(dmChannelId))),
+        // createDm: message => dispatch(createDm(message)),
+        // createDmChannel: channel => dispatch(createDmChannel(channel)),
+        // fetchDmChannels: userId => dispatch(fetchDmChannels(userId))
     }
 }
 

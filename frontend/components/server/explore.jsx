@@ -18,6 +18,10 @@ class Explore extends React.Component {
         }
     }
 
+    componentDidUpdate(){
+        // this.props.fetchUserServers(this.props.currentUser.id)
+    }
+
 
 
     render(){

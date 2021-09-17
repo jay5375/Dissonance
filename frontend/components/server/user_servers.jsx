@@ -6,6 +6,7 @@ import Channel from "../channel/channel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
 import Explore from "./explore";
+import Message from "../messages/message"
 
 class UserServers extends React.Component {
     constructor(props){
@@ -22,6 +23,12 @@ class UserServers extends React.Component {
         this.props.fetchUserServers(this.props.currentUser.id)
         this.props.fetchChannels()
         this.props.unjoinedUserServers(this.props.currentUser)
+        if (this.props.channelId) this.props.fetchChannelMessages(this.props.channelId)
+    }
+
+    componentDidUpdate(prevProps){
+        if (prevProps.channelId !== this.props.channelId) this.props.fetchChannelMessages(this.props.channelId)
+
     }
 
     handleSubmit(e){
@@ -92,7 +99,15 @@ class UserServers extends React.Component {
                     currentUser={this.props.currentUser}
                     history={this.props.history}
                     fetchUserServers={this.props.fetchUserServers}
-                    updateUser={this.props.updateUser}
+                />
+
+                <Message 
+                    currentUser={this.props.currentUser}
+                    messages={this.props.messages}
+                    channelId={this.props.channelId}
+                    server={this.props.server}
+                    createMessage={this.props.createMessage}
+                    
                 />
                 
                 

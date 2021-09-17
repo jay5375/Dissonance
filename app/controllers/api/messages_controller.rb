@@ -1,13 +1,14 @@
 class Api::MessagesController < ApplicationController
 
     def index 
-        @messages = Message.all 
         @channel_id = params[:channelId]
+        @messages = Message.where(channel_id: params[:channel_id])
         render 'api/messages/index'
     end
 
     def create 
         @message = Message.new(message_params)
+        @message.author_id = current_user.id
         if @message.save 
             render 'api/messages/show'
         end

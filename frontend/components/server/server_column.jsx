@@ -22,6 +22,7 @@ class ServerColumn extends React.Component {
     componentDidMount(){
         this.props.fetchUserServers(this.props.currentUser.id)
     }
+    
 
     handleChange(field){
         return e => {
