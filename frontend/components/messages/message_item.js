@@ -8,11 +8,8 @@ class MessageItem extends React.Component {
     render() {
         return (
             <li className="message-item">
-                <div className="message-body">
-                    <p>{this.props.message.user.username}:</p>
-                    <p>
-                    {this.props.message.body}
-                    </p>
+                <div className="message-title">
+                    <h3>{this.props.message.user.username}</h3>
                     <p className="date">
                         {this.props.message.created_at.slice(5,7)}/
                         {this.props.message.created_at.slice(8,10)}/
@@ -20,7 +17,9 @@ class MessageItem extends React.Component {
                         {this.props.message.created_at.slice(11,16)}
                     </p>
                 </div>
-            
+                <p className="body">
+                    {this.props.message.body}
+                </p>
             </li>
         )
     }
