@@ -107,7 +107,7 @@ class UserServers extends React.Component {
                     channelId={this.props.channelId}
                     server={this.props.server}
                     createMessage={this.props.createMessage}
-                    
+                    channel={this.props.channel}
                 />
                 
                 

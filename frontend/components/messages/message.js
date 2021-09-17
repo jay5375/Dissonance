@@ -13,6 +13,11 @@ class Message extends React.Component {
         if (!this.props.server) return null;
         return (
             <div className="message-input">
+                <div className="channel-banner">
+                    <h1>
+                        # {this.props.channel.name}
+                    </h1>
+                </div>
                 <ul className="color">
                     {this.props.messages.reverse().map(message => {
                         return <MessageItem 

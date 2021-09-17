@@ -24,7 +24,8 @@ const mSTP= ( state, ownProps ) => {
         // dmChannel: state.entites.dmChannels[ownProps.match.params.dmChannelId],
         dmChannelId: ownProps.match.params.dmChannelId,
         path: ownProps.match.url,
-        params: ownProps.match.params
+        params: ownProps.match.params,
+        channel: state.entities.channels[ownProps.match.params.channelId]
     }
 }
 

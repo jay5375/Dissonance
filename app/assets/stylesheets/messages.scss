@@ -2,6 +2,19 @@
     position: relative;
 }
 
+.channel-banner h1{
+    margin: 0;
+}
+
+.channel-banner {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid black;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 .input-bar form{
     position: absolute;
     bottom: 2%;
@@ -45,7 +58,7 @@
 }
 
 .color {
-    height: 95%;
+    height: 91%;
 }
 
 .bar {
