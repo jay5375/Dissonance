@@ -101,14 +101,14 @@ class UserServers extends React.Component {
                     fetchUserServers={this.props.fetchUserServers}
                 />
 
-                {/* <Message 
+                <Message 
                     currentUser={this.props.currentUser}
                     messages={this.props.messages}
                     channelId={this.props.channelId}
                     server={this.props.server}
                     createMessage={this.props.createMessage}
                     
-                /> */}
+                />
                 
                 
                 <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>

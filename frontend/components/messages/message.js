@@ -8,6 +8,7 @@ class Message extends React.Component {
     }
 
     render() {
+        if (!this.props.channelId) return null 
         // if (!this.props.messages) return null; 
         if (!this.props.server) return null;
         return (

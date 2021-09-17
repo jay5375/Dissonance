@@ -9,7 +9,7 @@ class MessageItem extends React.Component {
         return (
             <li className="message-item">
                 <div className="message-body">
-                    <p>{this.props.currentUser.username}:</p>
+                    <p>{this.props.message.user.username}:</p>
                     <p>
                     {this.props.message.body}
                     </p>
