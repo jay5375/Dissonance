@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from  '@fortawesome/free-solid-svg-icons'
 import Channel from '../channel/channel';
 
 class ServerColumn extends React.Component {
@@ -17,6 +17,10 @@ class ServerColumn extends React.Component {
         this.handleChannelSubmit = this.handleChannelSubmit.bind(this)
         this.handleDeleteServer = this.handleDeleteServer.bind(this)
         this.handleEditServer = this.handleEditServer.bind(this)
+    }
+
+    componentDidMount(){
+        this.props.fetchUserServers(this.props.currentUser.id)
     }
 
     handleChange(field){

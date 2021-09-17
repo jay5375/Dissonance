@@ -69,7 +69,7 @@ class UserServers extends React.Component {
                         </Link>
                     </li>
                     <div className="settings">
-                            <i onClick={this.props.logout}><FontAwesomeIcon icon={faSignOutAlt} /></i>
+                            <button onClick={this.props.logout} className="server-item"><FontAwesomeIcon icon={faSignOutAlt} /></button>
                     </div>
                 </ul>
                 
@@ -82,6 +82,7 @@ class UserServers extends React.Component {
                     updateChannel={this.props.updateChannel}
                     deleteChannel={this.props.deleteChannel}
                     history = {this.props.history}
+                    fetchUserServers={this.props.fetchUserServers}
                 />
                 
                 <Explore 
@@ -91,6 +92,7 @@ class UserServers extends React.Component {
                     currentUser={this.props.currentUser}
                     history={this.props.history}
                     fetchUserServers={this.props.fetchUserServers}
+                    updateUser={this.props.updateUser}
                 />
                 
                 

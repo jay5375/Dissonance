@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     end
     resources :users_servers, only: [:create, :destroy, :index]
     resources :channels, only: [:index, :show, :update, :destroy]
+    resources :messages, only: [:index, :create, :destroy]
+    resources :direct_messages, only: [:index, :create, :destroy]
+    resources :dm_channels, only: [:index, :create]
   end
   root "static_pages#root"
 end

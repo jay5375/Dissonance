@@ -3,7 +3,7 @@ import { createServer, deleteServer, fetchUserServers, updateServer } from "../.
 import { fetchChannels, createChannel, updateChannel, deleteChannel } from "../../actions/channel_actions";
 import { createUserServer, deleteUserServer, unjoinedUserServers} from "../../actions/users_servers_actions";
 import UserServers from './user_servers';
-import { logout } from "../../actions/session_actions";
+import { logout, updateUser } from "../../actions/session_actions";
 
 
 const mSTP= ( state, ownProps ) => {
@@ -30,7 +30,8 @@ const mDTP = dispatch => {
         deleteChannel: channel => dispatch(deleteChannel(channel)),
         createUserServer: userServer => dispatch(createUserServer(userServer)),
         deleteUserServer: userServer => dispatch(deleteUserServer(userServer)),
-        unjoinedUserServers: currentUser => dispatch(unjoinedUserServers(currentUser))
+        unjoinedUserServers: currentUser => dispatch(unjoinedUserServers(currentUser)),
+        updateUser: user => dispatch(updateUser(user))
     }
 }
 

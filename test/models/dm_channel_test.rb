@@ -1,18 +1,16 @@
 # == Schema Information
 #
-# Table name: messages
+# Table name: dm_channels
 #
 #  id         :bigint           not null, primary key
-#  body       :text             not null
-#  author_id  :integer          not null
-#  channel_id :integer          not null
+#  user1_id   :integer          not null
+#  user2_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  server_id  :integer
 #
 require "test_helper"
 
-class MessageTest < ActiveSupport::TestCase
+class DmChannelTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

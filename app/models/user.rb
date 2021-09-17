@@ -64,5 +64,21 @@ class User < ApplicationRecord
     has_many :servers,
         through: :joined_servers,
         source: :server
+
+    has_many :messages, 
+        foreign_key: :author_id,
+        class_name: :Message
+
+    has_many :direct_messages, 
+        foreign_key: :user2_id,
+        class_name: :DmChannel
+
+    has_many :dmchannels1,
+        foreign_key: :user1_id,
+        class_name: :DmChannel
+
+    has_many :dmchannels2, 
+        foreign_key: :user2_id,
+        class_name: :DmChannel
     
 end

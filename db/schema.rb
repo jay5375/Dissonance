@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_185418) do
+ActiveRecord::Schema.define(version: 2021_09_17_035521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,20 @@ ActiveRecord::Schema.define(version: 2021_09_15_185418) do
   create_table "direct_messages", force: :cascade do |t|
     t.text "body", null: false
     t.integer "sender_id", null: false
-    t.integer "receiver_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["receiver_id"], name: "index_direct_messages_on_receiver_id"
+    t.integer "dm_channel_id"
+    t.index ["dm_channel_id"], name: "index_direct_messages_on_dm_channel_id"
     t.index ["sender_id"], name: "index_direct_messages_on_sender_id"
+  end
+
+  create_table "dm_channels", force: :cascade do |t|
+    t.integer "user1_id", null: false
+    t.integer "user2_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user1_id"], name: "index_dm_channels_on_user1_id"
+    t.index ["user2_id"], name: "index_dm_channels_on_user2_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -39,6 +48,10 @@ ActiveRecord::Schema.define(version: 2021_09_15_185418) do
     t.integer "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "server_id"
+    t.index ["author_id"], name: "index_messages_on_author_id"
+    t.index ["channel_id"], name: "index_messages_on_channel_id"
+    t.index ["server_id"], name: "index_messages_on_server_id"
   end
 
   create_table "servers", force: :cascade do |t|
