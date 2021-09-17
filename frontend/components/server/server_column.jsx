@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from  '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
 import Channel from '../channel/channel';
 
 class ServerColumn extends React.Component {
@@ -69,7 +69,7 @@ class ServerColumn extends React.Component {
                 <div className="channel_container">
                         <div className="server_menu">
                             <p>{this.props.server.name}</p>
-                            <i><FontAwesomeIcon icon={faAngleDown} onClick={this.handleServerMenu(true)}/></i>
+                            <i><FontAwesomeIcon icon={faAngleDown} className={`${this.props.currentUser.id === this.props.server.author_id ? 'display_modal' : 'hide_modal'}`} onClick={this.handleServerMenu(true)}/></i>
                         </div>
                         <div className="channel_banner">
                             <i><FontAwesomeIcon icon={faAngleDown}/></i>
@@ -83,7 +83,11 @@ class ServerColumn extends React.Component {
                             deleteChannel={this.props.deleteChannel}
                             updateServer={this.props.updateServer}
                         />
+                        <div className="username">
+                            <h3>{this.props.currentUser.username} # {this.props.currentUser.id}</h3>
+                        </div>
                 </div>
+                
                 <div className={`modal-container ${ this.state.createChannel ? 'display_modal' : 'hide_modal'}`}>
                     <div className={`createChannel`}>
                         <form onSubmit={this.handleChannelSubmit}>

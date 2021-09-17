@@ -4,7 +4,7 @@ import ServerItem from "./server_item";
 import ServerColumn from "./server_column";
 import Channel from "../channel/channel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompass } from  '@fortawesome/free-solid-svg-icons'
+import { faCompass, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
 import Explore from "./explore";
 
 class UserServers extends React.Component {
@@ -68,6 +68,9 @@ class UserServers extends React.Component {
                             <button className="server-item"><FontAwesomeIcon icon={faCompass}/></button>
                         </Link>
                     </li>
+                    <div className="settings">
+                            <i onClick={this.props.logout}><FontAwesomeIcon icon={faSignOutAlt} /></i>
+                    </div>
                 </ul>
                 
                 <ServerColumn
@@ -82,11 +85,12 @@ class UserServers extends React.Component {
                 />
                 
                 <Explore 
+                    path={this.props.path}
                     unjoinedServers={this.props.unjoinedServers}
                     createUserServer={this.props.createUserServer}
-                    path={this.props.path}
                     currentUser={this.props.currentUser}
                     history={this.props.history}
+                    fetchUserServers={this.props.fetchUserServers}
                 />
                 
                 

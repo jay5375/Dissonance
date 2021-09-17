@@ -8,10 +8,6 @@ class Api::UsersServersController < ApplicationController
     end
 
     def create 
-        
-        # @currentUser = User.find_by(id: params[:currentUser][:id])
-        # @server = Server.find_by(id: params[:server][:id])
-        
         @user_server = UserServer.new(users_server_params)
         @user_server.user_id = current_user.id
         @user_server.save 
