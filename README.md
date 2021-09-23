@@ -10,7 +10,9 @@ Dissonance is a texting platform where users can communicate with others and cre
 * Users can explore and join other servers that they are not a part of 
 
 # Challenges
-* Getting users servers to render without refreshing. Previously when a new server was created the user would have to manually refresh the page to see the new server 
+* Displaying servers that a user was not currently a member of. My solution was to create an unjoined object which contained an array of servers where there was no association between the user and server, then 
+![alt text]() 
+
 * Populating every new server with a general channel and then displaying channels belonging to a server once a user had joined 
 
 # Technologies Used
