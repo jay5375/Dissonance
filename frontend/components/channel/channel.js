@@ -24,10 +24,10 @@ class Channel extends React.Component{
     }
 
     componentDidUpdate(prevProps){
-        if (prevProps.channels.length !== this.props.channels.length && this.props.path !== "/channels/@me") {
+        // if (prevProps.channels.length !== this.props.channels.length && this.props.path !== "/channels/@me") {
             if (this.props.server){
                 this.props.updateServer(this.props.server)
-            }
+            // }
         }
     }
 
