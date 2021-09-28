@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServerItem from "./server_item";
 import ServerColumn from "./server_column";
-import Channel from "../channel/channel";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
 import Explore from "./explore";
@@ -23,11 +22,17 @@ class UserServers extends React.Component {
         this.props.fetchUserServers(this.props.currentUser.id)
         this.props.fetchChannels()
         this.props.unjoinedUserServers(this.props.currentUser)
-        if (this.props.channelId) this.props.fetchChannelMessages(this.props.channelId)
+        if (this.props.channelId) {
+            this.props.fetchChannelMessages(this.props.channelId)
+        }
     }
 
     componentDidUpdate(prevProps){
-        if (prevProps.channelId !== this.props.channelId) this.props.fetchChannelMessages(this.props.channelId)
+        if (this.props.channelId && (prevProps.channelId !== this.props.channelId)) {
+            this.props.fetchUserServers(this.props.currentUser.id);            
+            this.props.fetchChannels();
+            this.props.fetchChannelMessages(this.props.channelId);
+        }
 
     }
 
@@ -52,7 +57,7 @@ class UserServers extends React.Component {
     }
 
     render() {
-        if (!this.props.servers) return null 
+        // if (!this.props.servers) return null 
         return (
             <div className="server_layout">
                 <ul>
@@ -99,6 +104,7 @@ class UserServers extends React.Component {
                     currentUser={this.props.currentUser}
                     history={this.props.history}
                     fetchUserServers={this.props.fetchUserServers}
+                    updateUser={this.props.updateUser}
                 />
 
                 <Message 

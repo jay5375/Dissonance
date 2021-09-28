@@ -8,9 +8,8 @@ class Message extends React.Component {
     }
 
     render() {
-        if (!this.props.channelId) return null 
-        // if (!this.props.messages) return null; 
         if (!this.props.server) return null;
+        if (!this.props.channel) return null;
         return (
             <div className="message-input">
                 <div className="channel-banner">
