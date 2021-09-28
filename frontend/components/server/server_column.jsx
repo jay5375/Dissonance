@@ -87,6 +87,7 @@ class ServerColumn extends React.Component {
                             updateChannel={this.props.updateChannel}
                             deleteChannel={this.props.deleteChannel}
                             updateServer={this.props.updateServer}
+                            channels={this.props.channels}
                         />
                         <div className="username">
                             <h3>{this.props.currentUser.username} # {this.props.currentUser.id}</h3>
