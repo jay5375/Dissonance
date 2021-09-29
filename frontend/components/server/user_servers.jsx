@@ -105,6 +105,7 @@ class UserServers extends React.Component {
                     history={this.props.history}
                     fetchUserServers={this.props.fetchUserServers}
                     updateUser={this.props.updateUser}
+                    unjoinedUserServers={this.props.unjoinedUserServers}
                 />
 
                 <Message 
@@ -114,6 +115,8 @@ class UserServers extends React.Component {
                     server={this.props.server}
                     createMessage={this.props.createMessage}
                     channel={this.props.channel}
+                    path={this.props.path}
+                    fetchChannelMessages={this.props.fetchChannelMessages}
                 />
                 
                 

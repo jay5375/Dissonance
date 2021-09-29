@@ -23,7 +23,7 @@ const mSTP= ( state, ownProps ) => {
         dmChannelId: ownProps.match.params.dmChannelId,
         path: ownProps.match.url,
         params: ownProps.match.params,
-        updateUser: user => dispatch(updateUser(user))
+        
         // dmChannels: Object.values(state.entites.dmChannels),
         // dmChannel: state.entites.dmChannels[ownProps.match.params.dmChannelId],
     }
@@ -45,6 +45,7 @@ const mDTP = dispatch => {
         unjoinedUserServers: currentUser => dispatch(unjoinedUserServers(currentUser)),
         createMessage: message => dispatch(createMessage(message)),
         fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
+        updateUser: user => dispatch(updateUser(user))
         // fetchChannelDms: dmChannelId => dispatch(dispatch(fetchChannelDms(dmChannelId))),
         // createDm: message => dispatch(createDm(message)),
         // createDmChannel: channel => dispatch(createDmChannel(channel)),

@@ -17,9 +17,14 @@ class MessageInput extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if (prevProps.channelId !== this.props.channelId){
+        // if (prevProps.channelId !== this.props.channelId){
+        //     this.subscription.unsubscribe()
+        //     this.subscribe()
+        // }
+        if (prevProps.path !== this.props.path) {
             this.subscription.unsubscribe()
             this.subscribe()
+            this.props.fetchChannelMessages(this.props.channelId)
         }
     }
 

@@ -7,6 +7,12 @@ class Message extends React.Component {
         super(props)
     }
 
+    componentDidUpdate(prevProps){
+        if (prevProps.channelId !== this.props.channelId){
+            // this.props.fetchChannelMessages(this.props.channelId)
+        }
+    }
+
     render() {
         if (!this.props.server) return null;
         if (!this.props.channel) return null;
@@ -30,6 +36,8 @@ class Message extends React.Component {
                     createMessage={this.props.createMessage}
                     channelId={this.props.channelId}
                     serverId={this.props.server.id}
+                    path={this.props.path}
+                    fetchChannelMessages={this.props.fetchChannelMessages}
                 />
             </div>
             

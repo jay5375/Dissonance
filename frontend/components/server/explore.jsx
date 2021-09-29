@@ -15,13 +15,18 @@ class Explore extends React.Component {
             this.props.createUserServer(server.id)
             this.props.updateUser(this.props.currentUser)
             this.props.fetchUserServers(this.props.currentUser.id)
+            this.props.unjoinedUserServers(this.props.currentUser)
             this.props.history.push(`/servers/${server.id}`)
         }
     }
 
-    componentDidUpdate(){
+    componentDidMount(){
         this.props.fetchUserServers(this.props.currentUser.id)
     }
+
+    // componentDidUpdate(prevProps){
+    //     if ()
+    // }
 
 
 
