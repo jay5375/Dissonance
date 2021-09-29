@@ -16,6 +16,12 @@
     background-color: #202225;
     grid-row: 1/2;
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.server_layout ul::-webkit-scrollbar{
+    display: none;
 }
 
 .server_layout li {
