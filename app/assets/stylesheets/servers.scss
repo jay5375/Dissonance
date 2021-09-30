@@ -232,6 +232,12 @@ i {
 .single-channel .cog {
     margin-left: auto;
     padding-right: 5%;
+    color: #2f3137;
+}
+
+.single-channel:hover .cog{
+    color: #868a8e;
+    cursor: pointer;
 }
 
 .single-channel p{

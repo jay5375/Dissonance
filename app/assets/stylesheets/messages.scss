@@ -15,6 +15,7 @@
     color: white;
 }
 
+
 .input-bar form{
     position: absolute;
     bottom: 2%;
@@ -27,6 +28,8 @@
 .input-bar form input {
     width: 95%;
     border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .message-item {
@@ -35,6 +38,7 @@
     color: white;
     width: 100%;
     flex-direction: column;
+    padding-left: 1%;
 }
 
 .message-input .color {
@@ -73,11 +77,13 @@
     color: white;
     border: none;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-right: auto;
 }
 
 .message-title {
     display: flex;
     align-items: center;
+    height: 20px;
 }
 
 .message-title p {
@@ -99,3 +105,6 @@
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+.input-bar input {
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}

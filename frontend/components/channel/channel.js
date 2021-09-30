@@ -63,7 +63,7 @@ class Channel extends React.Component{
                                     <Link to={`/servers/${this.props.server.id}/${channel.id}`}>
                                         <p>{channel.name}</p>
                                     </Link>
-                                    <i className="cog" onClick={ this.handleEdit(true, channel) }><FontAwesomeIcon icon={faCog}/></i>
+                                    <i className="cog" onClick={ this.handleEdit(true, channel) }><FontAwesomeIcon icon={faCog} className="cog"/></i>
                                 </li>)
                     })}
                 </ul>
