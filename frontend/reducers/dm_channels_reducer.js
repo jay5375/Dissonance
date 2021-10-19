@@ -1,4 +1,4 @@
-import { RECEIVE_DM_CHANNEL, RECEIVE_DM_CHANNELS } from "../actions/dm_channel_actions";
+import { RECEIVE_DM_CHANNEL, RECEIVE_DM_CHANNELS, REMOVE_DM_CHANNEL } from "../actions/dm_channel_actions";
 
 const dmChannelsReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -9,6 +9,8 @@ const dmChannelsReducer = (state = {}, action) => {
             return next 
         case RECEIVE_DM_CHANNELS:
             return action.channels 
+        case REMOVE_DM_CHANNEL:
+            delete next[action.dmChannel.id]
         default:
             return state 
     }

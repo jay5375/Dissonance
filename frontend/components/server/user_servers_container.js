@@ -5,27 +5,28 @@ import { createUserServer, deleteUserServer, unjoinedUserServers} from "../../ac
 import UserServers from './user_servers';
 import { logout, updateUser } from "../../actions/session_actions";
 import { createMessage, fetchChannelMessages } from "../../actions/message_actions";
-import { createDm, fetchChannelDms } from "../../util/direct_message_util";
-import { createDmChannel, fetchDmChannels } from "../../util/dm_channel_util";
-
+import { createDm, fetchChannelDms, fetchDirectMessages } from "../../actions/direct_message_actions";
+import { createDmChannel, fetchDmChannels } from "../../actions/dm_channel_actions";
+import { fetchAllUsers } from "../../actions/user_actions";
 
 const mSTP= ( state, ownProps ) => {
+    
     return {
         currentUser: state.entities.users[state.session.id],
+        users: Object.values(state.entities.users),
         server: state.entities.servers[ownProps.match.params.serverId],
         servers: Object.values(state.entities.servers),
         channel: state.entities.channels[ownProps.match.params.channelId],
         channels: Object.values(state.entities.channels),
-        messages: Object.values(state.entities.messages),
-        directMessages: Object.values(state.entities.directMessages),
         channelId: parseInt(ownProps.match.params.channelId),
         unjoinedServers: state.entities.unjoinedServers,
-        dmChannelId: ownProps.match.params.dmChannelId,
         path: ownProps.match.url,
+        messages: Object.values(state.entities.messages),
         params: ownProps.match.params,
-        
-        // dmChannels: Object.values(state.entites.dmChannels),
-        // dmChannel: state.entites.dmChannels[ownProps.match.params.dmChannelId],
+        directMessages: Object.values(state.entities.directMessages),
+        dmChannel: state.entities.dmChannels[ownProps.match.params.dmChannelId],
+        dmChannelId: ownProps.match.params.dmChannelId,
+        dmChannels: Object.values(state.entities.dmChannels)
     }
 }
 
@@ -45,11 +46,13 @@ const mDTP = dispatch => {
         unjoinedUserServers: currentUser => dispatch(unjoinedUserServers(currentUser)),
         createMessage: message => dispatch(createMessage(message)),
         fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId)),
-        updateUser: user => dispatch(updateUser(user))
-        // fetchChannelDms: dmChannelId => dispatch(dispatch(fetchChannelDms(dmChannelId))),
-        // createDm: message => dispatch(createDm(message)),
-        // createDmChannel: channel => dispatch(createDmChannel(channel)),
-        // fetchDmChannels: userId => dispatch(fetchDmChannels(userId))
+        updateUser: user => dispatch(updateUser(user)),
+        fetchDmChannels: () => dispatch(fetchDmChannels()),
+        createDmChannel: dmChannel => dispatch(createDmChannel(dmChannel)),
+        // fetchDms: dmChannelId => dispatch(fetchDirectMessages(dmChannelId)),
+        createDm: message => dispatch(createDm(message)),
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        fetchChannelDms: dmChannelId => dispatch(fetchChannelDms(dmChannelId))
     }
 }
 

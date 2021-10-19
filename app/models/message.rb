@@ -8,7 +8,7 @@
 #  channel_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  server_id  :integerh
+#  server_id  :integer
 #
 class Message < ApplicationRecord
     belongs_to :server,

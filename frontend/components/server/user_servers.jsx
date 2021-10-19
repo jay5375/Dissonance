@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass, faSignOutAlt } from  '@fortawesome/free-solid-svg-icons'
 import Explore from "./explore";
 import Message from "../messages/message"
+import DirectMessages from "../messages/direct_messages";
+import DirectMessageIndex from "../messages/direct_message_index";
 
 class UserServers extends React.Component {
     constructor(props){
@@ -19,12 +21,17 @@ class UserServers extends React.Component {
     }
 
     componentDidMount(){
+        this.props.fetchAllUsers()
         this.props.fetchUserServers(this.props.currentUser.id)
         this.props.fetchChannels()
         this.props.unjoinedUserServers(this.props.currentUser)
         if (this.props.channelId) {
             this.props.fetchChannelMessages(this.props.channelId)
         }
+        if (this.props.dmChannelId) {
+            this.props.fetchChannelDms(this.props.dmChannelId)
+        }
+        this.props.fetchDmChannels()
     }
 
     componentDidUpdate(prevProps){
@@ -33,7 +40,6 @@ class UserServers extends React.Component {
             this.props.fetchChannels();
             this.props.fetchChannelMessages(this.props.channelId);
         }
-
     }
 
     handleSubmit(e){
@@ -57,7 +63,10 @@ class UserServers extends React.Component {
     }
 
     render() {
-        // if (!this.props.servers) return null 
+        console.log(this.props.dmChannels)
+        console.log(this.props.dmChannelId)
+        let dm = this.props.dmChannels.find(dmChannel => dmChannel.id === this.props.dmChannelId) 
+        console.log(dm)
         return (
             <div className="server_layout">
                 <ul>
@@ -118,7 +127,31 @@ class UserServers extends React.Component {
                     path={this.props.path}
                     fetchChannelMessages={this.props.fetchChannelMessages}
                 />
+
+                <DirectMessageIndex
+                    currentUser={this.props.currentUser}
+                    path={this.props.path}
+                    dmChannels={this.props.dmChannels}
+                    fetchDmChannels={this.props.fetchDmChannels}
+                    users={this.props.users}
+                    createDmChannel={this.props.createDmChannel}
+                    dmChannelId={this.props.dmChannelId}
+                    fetchChannelDms={this.props.fetchChannelDms}
+                    history={this.props.history}
+                    fetchUserServers={this.props.fetchUserServers}
+                />
                 
+                <DirectMessages
+                    dmChannel={this.props.dmChannel}
+                    currentUser={this.props.currentUser}
+                    createDm={this.props.createDm}
+                    fetchChannelDms={this.props.fetchChannelDms}
+                    directMessages={this.props.directMessages}
+                    dmChannels={this.props.dmChannels}
+                    match={this.props.match}
+                    dmChannelId={this.props.dmChannelId}
+                    fetchDmChannels={this.props.fetchDmChannels}
+                />
                 
                 <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>
                     <form>

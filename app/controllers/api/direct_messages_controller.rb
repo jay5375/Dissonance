@@ -1,16 +1,25 @@
 class Api::DirectMessagesController < ApplicationController
 
     def index 
-        @direct_messages = DirectMessage.all 
-        @dmChannel_id = params[:dmChannelId].to_i
-        render 'api/direct_messages/index'
+        @dms = DirectMessage.where(dm_channel_id: params[:dmChannelId])
+        render "api/direct_messages/index"
+    end
+
+    def show 
+        @direct_message = DirectMessage.find_by(id: params[:id])
+        render "api/direct_messages/show"
     end
 
     def create 
-        @direct_message = DirectMessage.new(direct_message_params)
-        if @direct_message.save 
-            render 'api/direct_messages/show'
+        @dm = DirectMessage.new(direct_message_params)
+        if @dm.save 
+            render "api/direct_messages/show"
         end
+    end
+
+    def update 
+        @direct_message = DirectMessage.find_by(id: params[:id])
+        @direct_message.update(message_params)
     end
 
     def destroy 
@@ -18,8 +27,9 @@ class Api::DirectMessagesController < ApplicationController
         @direct_message.destroy
     end
 
+    private
     def direct_message_params
-        params.require(:message).permit(:body, :sender_id, :dm_channel_id)
+        params.require(:directMessage).permit(:body, :sender_id, :dm_channel_id)
     end
 
 end

@@ -10,11 +10,11 @@
 #  dm_channel_id :integer
 #
 class DirectMessage < ApplicationRecord
-    belongs_to :dmchannel,
+    belongs_to :dm_channel,
         foreign_key: :dm_channel_id,
         class_name: :DmChannel
 
-    belongs_to :sender,
-        foreign_key: :author_id,
+    belongs_to :user,
+        foreign_key: :sender_id,
         class_name: :User
 end

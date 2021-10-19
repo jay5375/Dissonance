@@ -217,6 +217,7 @@ i {
 .channels {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .single-channel{

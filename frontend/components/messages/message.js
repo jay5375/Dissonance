@@ -7,11 +7,11 @@ class Message extends React.Component {
         super(props)
     }
 
-    componentDidUpdate(prevProps){
-        if (prevProps.channelId !== this.props.channelId){
-            // this.props.fetchChannelMessages(this.props.channelId)
-        }
-    }
+    // componentDidUpdate(prevProps){
+    //     if (prevProps.channelId !== this.props.channelId){
+    //         // this.props.fetchChannelMessages(this.props.channelId)
+    //     }
+    // }
 
     render() {
         if (!this.props.server) return null;

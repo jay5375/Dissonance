@@ -10,7 +10,7 @@ const directMessagesReducer = (state = {}, action) => {
         case RECEIVE_DIRECT_MESSAGES:
             return action.messages 
         case REMOVE_DIRECT_MESSAGE:
-            delete next[action.messageId]
+            delete next[action.message.id]
             return next 
         default:
             return state 

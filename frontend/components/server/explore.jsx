@@ -24,12 +24,6 @@ class Explore extends React.Component {
         this.props.fetchUserServers(this.props.currentUser.id)
     }
 
-    // componentDidUpdate(prevProps){
-    //     if ()
-    // }
-
-
-
     render(){
         if (this.props.path !== "/servers/explore") return null 
         if (!this.props.unjoinedServers.users_servers) return null 

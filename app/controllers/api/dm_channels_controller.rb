@@ -1,18 +1,28 @@
 class Api::DmChannelsController < ApplicationController
 
     def index 
-        @user_id = params[:user_id].to_i
-        @direct_message_channels = DmChannel.all 
-        render 'api/dm_channels/index'
-    end
-
-    def create 
-        @direct_message_channel = DmChannel.new(dm_channel_params)
-        if @direct_message_channel.save 
-            render 'api/dm_channels/show'
+        @dmChannels = (DmChannel.where(user1_id: current_user.id)) || (DmChannel.where(user2_id: current_user.id))
+        if !@dmChannels 
+            @dmChannels = DmChannel.where(user2_id: current_user.id)
+            render "/api/dm_channels/index"
+        else
+            render "/api/dm_channels/index"
         end
     end
 
+    def create 
+        @dmChannels = DmChannel.new(dm_channel_params)
+        if @dmChannels.save 
+            render "api/dm_channels/show"
+        end
+    end
+
+    def show 
+        @dmChannels = DmChannel.where(user1_id: current_user.id) || DmChannel.where(user2_id: current_user.id)
+        render "api/dm_channels/show"
+    end
+
+    private
     def dm_channel_params
         params.require(:dm_channel).permit(:user1_id, :user2_id)
     end

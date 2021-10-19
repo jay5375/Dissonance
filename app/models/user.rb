@@ -70,14 +70,14 @@ class User < ApplicationRecord
         class_name: :Message
 
     has_many :direct_messages, 
-        foreign_key: :user2_id,
-        class_name: :DmChannel
+        foreign_key: :sender_id,
+        class_name: :DirectMessage
 
-    has_many :dmchannels1,
+    has_one :user1,
         foreign_key: :user1_id,
         class_name: :DmChannel
 
-    has_many :dmchannels2, 
+    has_one :user2, 
         foreign_key: :user2_id,
         class_name: :DmChannel
     

@@ -1,3 +1,9 @@
+export const fetchDmChannels = () => (
+    $.ajax({
+        url: `/api/dm_channels`
+    })
+)
+
 export const createDmChannel = dm_channel => (
     $.ajax({
         url: '/api/dm_channels',
@@ -6,9 +12,9 @@ export const createDmChannel = dm_channel => (
     })
 )
 
-export const fetchDmChannels = userId => (
+export const deleteDmChannel = dmChannelId => (
     $.ajax({
-        url: '/api/dm_channels',
-        data: { userId }
+        method: "DELETE",
+        url: `/api/dm_channels/${dmChannelId}`
     })
 )

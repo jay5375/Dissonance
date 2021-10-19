@@ -1,5 +1,4 @@
 import * as DmUtils from "../util//direct_message_util"
-import { REMOVE_MESSAGE } from "./message_actions"
 
 export const RECEIVE_DIRECT_MESSAGE = 'RECEIVE_DIRECT_MESSAGE'
 export const RECEIVE_DIRECT_MESSAGES = 'RECEIVE_DIRECT_MESSAGES'
@@ -22,14 +21,15 @@ const receiveDms = messages => {
 const removeDm = messageId => {
     return {
         type: REMOVE_DIRECT_MESSAGE,
-        messageId 
+        messageId
     }
 }
 
 export const fetchChannelDms = dmChannelId => dispatch => {
-    return DmUtils.fetchChannelDms(dmChannelId)
+    return DmUtils.fetchDms(dmChannelId)
         .then(messages => dispatch(receiveDms(messages)))
 }
+
 
 export const createDm = message => dispatch => {
     return DmUtils.createDm(message)
