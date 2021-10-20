@@ -1,13 +1,14 @@
 class Api::DmChannelsController < ApplicationController
 
     def index 
-        @dmChannels = (DmChannel.where(user1_id: current_user.id)) || (DmChannel.where(user2_id: current_user.id))
-        if !@dmChannels 
-            @dmChannels = DmChannel.where(user2_id: current_user.id)
-            render "/api/dm_channels/index"
-        else
-            render "/api/dm_channels/index"
-        end
+        @dmChannels = (DmChannel.where(user1_id: current_user.id)).or(DmChannel.where(user2_id: current_user.id))
+        render "api/dm_channels/index"
+        # if !@dmChannels 
+        #     @dmChannels = DmChannel.where(user2_id: current_user.id)
+        #     render "/api/dm_channels/index"
+        # else
+        #     render "/api/dm_channels/index"
+        # end
     end
 
     def create 

@@ -16,19 +16,23 @@ class DirectMessages extends React.Component {
         }
     }
 
+
     render() {
-       let dm = this.props.dmChannels.find(dmChannel => dmChannel.id === this.props.dmChannelId) 
-       if (!dm) return null 
-    //    if (!this.props.dmChannels[this.props.dmChannelId]) return null 
-    //    const dm = this.props.dmChannels[this.props.dmChannelId]
-       if (!this.props.directMessages) return null 
-       let name;
-       if (dm.user1.id === this.props.currentUser.id) {
+        let dm;
+        this.props.dmChannels.forEach(element => {
+            if (element.id == this.props.dmChannelId) {
+                dm = element;
+            }
+        });
+        if (!dm) return null 
+        if (!this.props.directMessages) return null 
+        let name;
+        if (dm.user1.id === this.props.currentUser.id) {
            name = dm.user2.username
-       } else {
-           name = dm.user1.username 
-       }
-       return (
+        } else {
+            name = dm.user1.username 
+        }
+        return (
            <div className="message-input">
                <div className="channel-banner">
                    <h1>{name}</h1>

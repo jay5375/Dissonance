@@ -10,11 +10,11 @@ import UserServersContainer from "./server/user_servers_container";
 
 const App = () => (
   <div>
-    <Switch>
-      <ProtectedRoute exact path="/servers/explore" component={UserServersContainer} />
       <Route exact path="/" component={GreetingContainer} /> 
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <ProtectedRoute exact path="/servers/explore" component={UserServersContainer} />
       <ProtectedRoute exact path="/servers/:serverId" component={UserServersContainer} />
       <ProtectedRoute exact path="/servers/:serverId/:channelId" component={UserServersContainer} />
       <ProtectedRoute exact path="/channels/@me/:dmChannelId" component={UserServersContainer} />

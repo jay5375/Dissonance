@@ -63,10 +63,7 @@ class UserServers extends React.Component {
     }
 
     render() {
-        console.log(this.props.dmChannels)
-        console.log(this.props.dmChannelId)
-        let dm = this.props.dmChannels.find(dmChannel => dmChannel.id === this.props.dmChannelId) 
-        console.log(dm)
+        console.log(this.props.dmChannels[0])
         return (
             <div className="server_layout">
                 <ul>
