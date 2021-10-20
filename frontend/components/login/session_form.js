@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
                     <p>We're so excited to see you again!</p>
                     <p>EMAIL OR PHONE NUMBER {this.props.errors[0]}</p>
                     <input 
-                    type='text'
+                    type='email'
                     value={this.state.email}
                     onChange={this.update('email')}
                     />
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                         <h1>Create an account</h1>
                         <p>EMAIL</p>
                         <input 
-                        type='text'
+                        type='email'
                         value={this.state.email}
                         onChange={this.update('email')}/>
                         <p>USERNAME</p>
