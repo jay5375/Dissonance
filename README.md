@@ -1,4 +1,4 @@
-# [Dissonance](https://www.dissonance-fs.herokuapp.com)
+# [Dissonance](https://dissonance-fs.herokuapp.com)
 
 Dissonance is a texting platform where users can communicate with others and create their own communities. Users are able to create an account, create servers and channels, as well as join existing servers that they are not a part of. They can also edit exisiting servers and channels that they have created.
 
