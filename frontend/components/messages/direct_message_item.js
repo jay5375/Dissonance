@@ -11,7 +11,7 @@ class DmItem extends React.Component {
             name = this.props.dmChannel.user1.username 
         }
         return (
-            <div className="single-channel">
+            <div className="single-user">
                 <Link to={`/channels/@me/${this.props.dmChannel.id}`}>
                     <p>{name}</p>
                 </Link>

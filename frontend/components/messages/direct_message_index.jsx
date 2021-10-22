@@ -86,14 +86,15 @@ class DirectMessageIndex extends React.Component {
                 <div className="server_menu">
                     <p>{this.props.currentUser.username}</p>
                 </div>
-                <div className="channel_banner">
+                <div className="channel_banner" id="dms">
                     <p>Direct Messages</p><p className="add" onClick={this.displayModal}>+</p>
                 </div>
                 <div className="channels">
                 <ul>
                     {this.props.dmChannels.map(dmChannel => {
                         if (dmChannel.user1.id === this.props.currentUser.id || dmChannel.user2.id === this.props.currentUser.id){
-                            return <li key={dmChannel.id} className="single-channel">
+                            return <li key={dmChannel.id} id="indent">
+                                    <img src={window.user_logo} className="user-logo"/>
                                     <DmItem 
                                         dmChannel={dmChannel}
                                         messages={dmChannel.messages}

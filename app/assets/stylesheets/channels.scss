@@ -1,6 +1,8 @@
 .channel_banner {
     display: flex;
     align-items: center;
+    width: 200px;
+    margin-left: 0px;
 
 }
 
@@ -8,6 +10,7 @@
     margin-left: 8px;
     margin-right: 8px;
     color: #868a8e;
+    text-overflow: ellipsis;
 }
 
 .channel_banner p {
@@ -21,6 +24,13 @@
     padding-right: 6%;
     font-weight: bold;
     font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.outer {
+    // width: 200px;
 }
 
 .add:hover{

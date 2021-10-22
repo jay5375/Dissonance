@@ -70,7 +70,7 @@ class ServerColumn extends React.Component {
     render(){
         if (!this.props.server) return null 
         return (
-            <div>
+            <div className="outer">
                 <div className="channel_container">
                         <div className="server_menu">
                             <p>{this.props.server.name}</p>

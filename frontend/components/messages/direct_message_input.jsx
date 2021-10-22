@@ -75,8 +75,9 @@ class DirectMessageInput extends React.Component {
                         value={this.state.body}
                         onChange={this.handleInput}
                         className="bar"
+                        placeholder={`Message @${this.props.user}`}
                     />
-                    <button className="submit">Submit</button>
+                    {/* <button className="submit">Submit</button> */}
                 </form>
             </div>
         )

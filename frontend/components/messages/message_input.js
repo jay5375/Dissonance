@@ -71,7 +71,6 @@ class MessageInput extends React.Component {
                         onChange={this.message}
                         className="bar"
                     />
-                    <button className="submit">Submit</button>
                 </form>
             </div>
         )

@@ -82,10 +82,10 @@ class Greeting extends React.Component {
                       <img src={window.logo} alt='Dissonance'></img>
                     </Link>
                       <div className="links">
-                        <a href="https://github.com/jay5375">GitHub</a>
-                        <a href="https://www.linkedin.com/in/jonathan-wong-435a8b146/">LinkedIn</a>
+                        <a href="https://github.com/jay5375" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/jonathan-wong-435a8b146/" target="_blank">LinkedIn</a>
                         {/* <a href="">Portfolio</a> */}
-                        <a href="https://docs.google.com/document/d/1V0Y0HZvcfPiW93J_Y_bRNS07jfRTXbe7Sa-uQSB1l8Q/edit?usp=sharing">Resume</a>
+                        <a href="https://docs.google.com/document/d/1V0Y0HZvcfPiW93J_Y_bRNS07jfRTXbe7Sa-uQSB1l8Q/edit?usp=sharing" target="_blank">Resume</a>
                       </div>
                       <button className="login-button"><Link to="/login" className="login">Login</Link></button>
                     </div>

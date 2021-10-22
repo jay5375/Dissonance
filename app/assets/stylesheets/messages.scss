@@ -20,25 +20,66 @@
     position: absolute;
     bottom: 2%;
     display: flex;
-    height: 3%;
+    height: 35px;
     width: 100%;
     justify-content: center;
 }
 
 .input-bar form input {
-    width: 95%;
+    width: 98%;
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    // height: 40px;
 }
 
 .message-item {
     display: flex;
     background-color: #37393f;
     color: white;
-    width: 100%;
-    flex-direction: column;
-    padding-left: 1%;
+    width: 98%;
+    height: auto;
+    align-items: center;
+    // flex-direction: column;
+}
+
+#dms {
+    margin-left: 8px;
+}
+
+#indent {
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    color: #868a8e;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0px;
+    font-size: 16px;
+    
+}
+
+.single-user {
+    display: flex;
+    align-items: center;
+    color: #868a8e;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0px;
+    font-size: 16px;
+    height: 25px;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.single-user a {
+    text-decoration: none;
+    color: #868a8e;
+}
+
+.user-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
 }
 
 .message-input .color {
@@ -59,10 +100,12 @@
 
 .message-item .message-body .date {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .color {
-    height: 91%;
+    height: 88%;
 }
 
 .bar {
@@ -70,6 +113,11 @@
     border: none;
     border-right: 1px solid black;
     color: white;
+    width: 100%;
+}
+
+.bar:focus {
+    outline: none;
 }
 
 .submit {
@@ -83,28 +131,45 @@
 .message-title {
     display: flex;
     align-items: center;
-    height: 20px;
+    flex-direction: column;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#date-format {
+    margin-bottom: 0px;
 }
 
 .message-title p {
-    font-size: .75em;
+    font-size: 1em;
     color: #a9acae;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    margin-top: 10px;
     
 }
 
 .message-title h3 {
     margin-right: 10px;
-    margin-left: 10px;
+    // margin-left: 15px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
 
 .body {
-    margin-left: 10px;
+    // margin-left: 15px;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    text-align: left;
+    width: 100%;
 }
 
 .input-bar input {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    text-indent: 10px;
 }
+

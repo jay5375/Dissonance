@@ -149,22 +149,22 @@ class UserServers extends React.Component {
                     dmChannelId={this.props.dmChannelId}
                     fetchDmChannels={this.props.fetchDmChannels}
                 />
-                
-                <div className={`modal ${this.state.modal ? "display_modal" : "hide_modal" }`}>
-                    <form>
-                        <h1>Create a server</h1>
-                        <p>Server Name</p>
-                        <input 
-                            type='text'
-                            value={this.state.name}
-                            onChange={this.handleChange('name')}
-                        />
-                        <div className="createServerButtons">
-                            <button onClick={this.handleModal(false)} className="cancel">Cancel</button>
-                            <button onClick={this.handleSubmit} className="purple">Create</button>
-                        </div>
-                        
-                    </form>
+                <div className={`modal-container ${this.state.modal? "display_modal" : "hide_modal"}`}>
+                    <div className="createChannel">
+                        <form>
+                            <p onClick={this.handleModal(false)} id="x">&times;</p>
+                            <h1>Create a server</h1>
+                            <p>Server Name</p>
+                            <input 
+                                type='text'
+                                value={this.state.name}
+                                onChange={this.handleChange('name')}
+                            />
+                            <div className="createServerButtons">
+                                <button onClick={this.handleSubmit} className="purple">Create</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         )

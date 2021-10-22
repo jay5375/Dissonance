@@ -40,17 +40,20 @@ class DirectMessages extends React.Component {
                <ul className="color">
                    {this.props.directMessages.reverse().map(message => {
                        return <li key={message.id} className="message-item">
-                               <div className="message-title">
-                                    <h3>{message.user.username}</h3>
-                                    <p className="date">
-                                        {message.created_at.slice(5,7)}/
-                                        {message.created_at.slice(8,10)}/
-                                        {message.created_at.slice(0,4)} at &nbsp;
-                                        {message.created_at.slice(11, 16)}
-                                    </p>
-                               </div>
-                                <div>
-                                    <p className="body">{message.body}</p>
+                                <img src={window.user_logo} className="user-logo"/>
+                                <div className="message-title">
+                                    <div className="date">
+                                        <h3>{message.user.username}</h3>
+                                        <p id="date-format">
+                                            {message.created_at.slice(5,7)}/
+                                            {message.created_at.slice(8,10)}/
+                                            {message.created_at.slice(0,4)} at &nbsp;
+                                            {message.created_at.slice(11, 16)}
+                                        </p>
+                                    </div>
+                                    <div className="body">
+                                        <p>{message.body}</p>
+                                    </div>
                                 </div>
                        </li>
                    })}

@@ -13,6 +13,10 @@ class SessionForm extends React.Component {
     this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -34,8 +38,8 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+        {this.props.errors.session.map((error, i) => (
+          <li key={`error-${i}`} className="error-li">
             {error}
           </li>
         ))}
@@ -51,7 +55,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Welcome back!</h1>
                     <p>We're so excited to see you again!</p>
-                    <p>EMAIL OR PHONE NUMBER {this.props.errors[0]}</p>
+                    <p>EMAIL OR PHONE NUMBER</p>
                     <input 
                     type='email'
                     value={this.state.email}
@@ -66,7 +70,8 @@ class SessionForm extends React.Component {
                     <button>Login</button>
                     <button onClick={(this.handleDemoUser)}>Demo User</button>
                 </form>
-                  <p>Need an account? <Link to='/signup'>Register</Link></p>
+                <p>Need an account? <Link to='/signup'>Register</Link></p>
+                <div className="errors">{this.renderErrors()}</div>
               </div>
             </div>
         )
@@ -76,7 +81,7 @@ class SessionForm extends React.Component {
               <form onSubmit={this.handleSubmit}>
                     <div className="auth_background">
                       <div className="signup-form">
-                        <h1>Create an account</h1>
+                        <h1>Create an account </h1>
                         <p>EMAIL</p>
                         <input 
                         type='email'
@@ -96,6 +101,7 @@ class SessionForm extends React.Component {
                         />
                         <button>Continue</button>
                         <Link to="/login" className="link">Already have an account?</Link>
+                        <div className="errors">{this.renderErrors()}</div>
                       </div>
                     </div>
               </form>
