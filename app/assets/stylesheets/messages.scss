@@ -140,12 +140,14 @@
 
 .date {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 #date-format {
     margin-bottom: 0px;
+    font-size: 15px;
 }
 
 .message-title p {
