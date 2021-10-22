@@ -87,7 +87,7 @@ class DirectMessageIndex extends React.Component {
                     <p>{this.props.currentUser.username}</p>
                 </div>
                 <div className="channel_banner" id="dms">
-                    <p>Direct Messages</p><p className="add" onClick={this.displayModal}>+</p>
+                    <p className="dms">Direct Messages</p><p className="add" onClick={this.displayModal}>+</p>
                 </div>
                 <div className="channels">
                 <ul>

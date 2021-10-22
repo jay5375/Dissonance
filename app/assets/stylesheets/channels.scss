@@ -2,12 +2,11 @@
     display: flex;
     align-items: center;
     width: 200px;
-    margin-left: 0px;
 
 }
 
 .channel_banner i {
-    margin-left: 8px;
+    // margin-left: 8px;
     margin-right: 8px;
     color: #868a8e;
     text-overflow: ellipsis;
@@ -21,7 +20,7 @@
  
 .add {
     margin-left: auto;
-    padding-right: 6%;
+    padding-right: 10px;
     font-weight: bold;
     font-size: 25px;
     display: flex;

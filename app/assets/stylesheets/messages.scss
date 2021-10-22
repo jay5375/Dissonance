@@ -43,7 +43,7 @@
     // flex-direction: column;
 }
 
-#dms {
+.dms {
     margin-left: 8px;
 }
 
@@ -69,6 +69,10 @@
     width: 60%;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#username2 {
+    margin-left: 15px;
 }
 
 .single-user a {

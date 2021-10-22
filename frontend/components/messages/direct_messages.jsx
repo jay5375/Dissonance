@@ -35,7 +35,7 @@ class DirectMessages extends React.Component {
         return (
            <div className="message-input">
                <div className="channel-banner">
-                   <h1>{name}</h1>
+                   <h1 id="username2">{name}</h1>
                </div>
                <ul className="color">
                    {this.props.directMessages.reverse().map(message => {
