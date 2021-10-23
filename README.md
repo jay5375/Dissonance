@@ -2,6 +2,10 @@
 
 Dissonance is a texting platform where users can communicate with others and create their own communities. Users are able to create an account, create servers and channels, as well as join existing servers that they are not a part of. They can also edit exisiting servers and channels that they have created.
 
+![alt text](app/assets/images/landingss.png)
+![alt text](app/assets/images/chat.png)
+![alt text](app/assets/images/create.png)
+
 
 # Servers and Channels
 * Users are able to create, delete and edit servers that they are the owner of 

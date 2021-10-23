@@ -211,6 +211,11 @@ i {
     background-color: #2f3137;
     display: block;
     width: 200px;
+    scrollbar-width: none;
+}
+
+.channels ul::-webkit-scrollbar{
+    display: none;
 }
 
 .single-channel i{
