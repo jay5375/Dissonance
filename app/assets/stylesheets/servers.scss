@@ -214,8 +214,8 @@ i {
     scrollbar-width: none;
 }
 
-.channels ul::-webkit-scrollbar{
-    display: none;
+::-webkit-scrollbar {
+    width: 0;
 }
 
 .single-channel i{
