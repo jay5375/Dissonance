@@ -18,7 +18,7 @@ Dissonance is a texting platform where users can communicate with others and cre
 
 ```js 
 componentDidMount() {
-this.props.fetchDmChannels(this.props.currentUser.id)
+    this.props.fetchDmChannels(this.props.currentUser.id)
 }
     
 componentDidUpdate(prevProps) {
@@ -33,18 +33,18 @@ componentDidUpdate(prevProps) {
 
 ```js
 {this.props.directMessages.reverse().map(message => {
-return <li key={message.id} className="message-item">
-<img src={window.user_logo} className="user-logo"/>
-<div className="message-title">
-    <div className="date">
-        <h3>{message.user.username}</h3>
-        <p id="date-format">
-            {message.created_at.slice(5,7)}/
-            {message.created_at.slice(8,10)}/
-            {message.created_at.slice(0,4)} at &nbsp;
-            {message.created_at.slice(11, 16)}
-        </p>
-    </div>
+    return <li key={message.id} className="message-item">
+    <img src={window.user_logo} className="user-logo"/>
+    <div className="message-title">
+        <div className="date">
+            <h3>{message.user.username}</h3>
+            <p id="date-format">
+                {message.created_at.slice(5,7)}/
+                {message.created_at.slice(8,10)}/
+                {message.created_at.slice(0,4)} at &nbsp;
+                {message.created_at.slice(11, 16)}
+            </p>
+        </div>
         <div className="body">
             <p>{message.body}</p>
         </div>
@@ -71,7 +71,7 @@ componentWillUnmount() {
 subscribe() {
     this.subscription = consumer.subscriptions.create(
     {channel: "UserChannel", id: this.state.value},
-    {
+        {
         received: data => {
             this.props.fetchDmChannels()
             this.setState({
@@ -80,8 +80,8 @@ subscribe() {
                 value: ""
             })
         }
-    }
-)
+        }
+    )
 }
 ```
 
