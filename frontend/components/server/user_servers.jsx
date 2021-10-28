@@ -63,7 +63,6 @@ class UserServers extends React.Component {
     }
 
     render() {
-        console.log(this.props.dmChannels[0])
         return (
             <div className="server_layout">
                 <ul>
